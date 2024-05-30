@@ -1,0 +1,12 @@
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.deps.json
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.dll
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.pdb
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.AssemblyInfoInputs.cache
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.AssemblyInfo.cs
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.csproj.CoreCompileInputs.cache
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.dll
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\refint\QLMT.Models.dll
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.pdb
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\ref\QLMT.Models.dll
+C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.sourcelink.json
