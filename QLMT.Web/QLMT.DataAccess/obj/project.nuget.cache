@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cFjn+8WtqPOyNX1cz1HW3cIAexYACFrjCABZgtXxoSKBRt+yjzSdlbED/t3c91bP9r9sL4YpVXaUIIkEldnQDA==",
+  "dgSpecHash": "2cGdSkcZ2T0fT4ULWyi4kSQMArdnc6NtnANVdbPwUxONTgV181yHRyhWletBomkw80Bq9nIEhih+C/Rx9MxTqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VIETPT\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\VIETPT\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",

@@ -18,7 +18,7 @@ namespace QLMT.DataAccess.Migrations
                     ComputerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EntryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Configuration = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,7 +47,7 @@ namespace QLMT.DataAccess.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ScreenName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EntryDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,18 +67,7 @@ namespace QLMT.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Units", x => x.UnitId);
-                    table.ForeignKey(
-                        name: "FK_Units_Lines_LineId",
-                        column: x => x.LineId,
-                        principalTable: "Lines",
-                        principalColumn: "LineId",
-                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Units_LineId",
-                table: "Units",
-                column: "LineId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -87,13 +76,13 @@ namespace QLMT.DataAccess.Migrations
                 name: "Computers");
 
             migrationBuilder.DropTable(
+                name: "Lines");
+
+            migrationBuilder.DropTable(
                 name: "Screens");
 
             migrationBuilder.DropTable(
                 name: "Units");
-
-            migrationBuilder.DropTable(
-                name: "Lines");
         }
     }
 }

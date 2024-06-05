@@ -9126,18 +9126,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
+      "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
       "projectName": "QLMT.Web",
-      "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
+      "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
       "packagesPath": "C:\\Users\\VIETPT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Web\\obj\\",
+      "outputPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\NuGet.Config",
+        "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\NuGet.Config",
         "C:\\Users\\VIETPT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -9157,11 +9157,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj"
+            "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj"
             },
-            "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
-              "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj"
+            "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
+              "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj"
             }
           }
         }

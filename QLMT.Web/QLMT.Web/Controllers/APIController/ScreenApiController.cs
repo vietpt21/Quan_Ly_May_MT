@@ -8,26 +8,26 @@ using QLMT.Models;
 namespace QLMT.Web.Controllers.APIController
 {
     [Route("api/[controller]")]
-    public class LineApiController : Controller
+    public class ScreenApiController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public LineApiController(IUnitOfWork unitOfWork)
+        public ScreenApiController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
         [HttpGet]
         public object Get(DataSourceLoadOptions loadOptions)
         {
-            return DataSourceLoader.Load(_unitOfWork.Line.GetAll(), loadOptions);
+            return DataSourceLoader.Load(_unitOfWork.Screen.GetAll(), loadOptions);
         }
 
         [HttpPost]
         public IActionResult Post(string values)
         {
-            var newLine = new Line();
-            JsonConvert.PopulateObject(values, newLine);
-            _unitOfWork.Line.Add(newLine);
+            var newScreen = new Screen();
+            JsonConvert.PopulateObject(values, newScreen);
+            _unitOfWork.Screen.Add(newScreen);
             _unitOfWork.Save();
 
             return Ok();
@@ -36,8 +36,8 @@ namespace QLMT.Web.Controllers.APIController
         [HttpPut]
         public IActionResult Put(int key, string values)
         {
-            var newLine = _unitOfWork.Line.GetFirstOrDefault(a => a.LineId == key);
-            JsonConvert.PopulateObject(values, newLine);
+            var newScreen = _unitOfWork.Screen.GetFirstOrDefault(a => a.ScreenId == key);
+            JsonConvert.PopulateObject(values, newScreen);
             _unitOfWork.Save();
 
             return Ok();
@@ -45,8 +45,8 @@ namespace QLMT.Web.Controllers.APIController
         [HttpDelete]
         public void Delete(int key)
         {
-            var line = _unitOfWork.Line.GetFirstOrDefault(a => a.LineId == key);
-            _unitOfWork.Line.Remove(line);
+            var screen = _unitOfWork.Screen.GetFirstOrDefault(a => a.ScreenId == key);
+            _unitOfWork.Screen.Remove(screen);
             _unitOfWork.Save();
         }
     }

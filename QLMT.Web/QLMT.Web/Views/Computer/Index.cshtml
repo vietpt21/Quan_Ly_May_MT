@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@(Html.DevExtreme().DataGrid<QLMT.Models.Computer>()
+
+                    .ElementAttr(new { @class = "dx-card wide-card" })
+                    .DataSource(d => d.Mvc()
+                    .Controller("ComputerApi")
+                    .LoadAction("Get")
+                    .InsertAction("Post")
+                    .UpdateAction("Put")
+                    .DeleteAction("Delete")
+                    .Key("ComputerId")
+                    )
+                    .ShowBorders(false)
+                    .FilterRow(f => f.Visible(true))
+                    .FocusedRowEnabled(true)
+                    .FocusedRowIndex(0)
+                    .ColumnAutoWidth(true)
+                    .ColumnHidingEnabled(true)
+                    .Columns(columns =>
+                    {
+                        columns.AddFor(m => m.ComputerName);
+                        columns.AddFor(m => m.Configuration);
+                        columns.AddFor(m => m.EntryDate);
+                        columns.AddFor(m => m.Status);
+
+                    })
+                    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                    .Paging(p => p.PageSize(10))
+                    .Pager(p => p
+                    .ShowPageSizeSelector(true)
+                    .AllowedPageSizes(new[] { 5, 10, 20 })
+                    .ShowInfo(true)
+                    )
+                    )

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aVIWpHk+6n7bdwg2PvRwi6k8YMEVf1oyyDBv2upZXaz5SntcREWDXio8VozaRJfOve9cmvvCSI4XSh+caoSZqg==",
+  "dgSpecHash": "IwzybvMUudtaEEpNucGupvHaMvM453/mO0rg5cXb0/FQX7KkbJpYMOqrK2oBYSK9asTf/R74GNqK6ZQu+nTtJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
+  "projectFilePath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\QLMT.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VIETPT\\.nuget\\packages\\buildbundlerminifier\\2.9.406\\buildbundlerminifier.2.9.406.nupkg.sha512",
     "C:\\Users\\VIETPT\\.nuget\\packages\\devextreme.aspnet.core\\21.2.6\\devextreme.aspnet.core.21.2.6.nupkg.sha512",

@@ -7,6 +7,7 @@ using QLMT.Models;
 
 namespace QLMT.Web.Controllers.APIController
 {
+    [Route("api/[controller]")]
     public class ComputerApiController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -32,31 +33,32 @@ namespace QLMT.Web.Controllers.APIController
         }
 
         [HttpPost]
-        public IActionResult Insert(string values)
+        public IActionResult Post(string values)
         {
-            var newComputer = new Line();
+            var newComputer = new Computer();
             JsonConvert.PopulateObject(values, newComputer);
-            _unitOfWork.Line.Add(newComputer);
+            _unitOfWork.Computer.Add(newComputer);
             _unitOfWork.Save();
 
-            return Ok(newComputer);
+            return Ok();
         }
         [HttpPut]
-        public IActionResult Update(int id, string values)
+        public IActionResult Put(int key, string values)
         {
-            var computer = _unitOfWork.Computer.GetFirstOrDefault(o => o.ComputerId == id);
-            JsonConvert.PopulateObject(values, computer);
-            _unitOfWork.Computer.Update(computer);
+            var newComputer = _unitOfWork.Computer.GetFirstOrDefault(a => a.ComputerId == key);
+            JsonConvert.PopulateObject(values, newComputer);
             _unitOfWork.Save();
-            return Ok(computer);
+
+            return Ok();
         }
 
         [HttpDelete]
-        public void Delete(int id)
+        public void Delete(int key)
         {
-            var computer = _unitOfWork.Computer.GetFirstOrDefault(o => o.ComputerId == id);
+            var computer = _unitOfWork.Computer.GetFirstOrDefault(a => a.ComputerId == key);
             _unitOfWork.Computer.Remove(computer);
             _unitOfWork.Save();
         }
+
     }
 }

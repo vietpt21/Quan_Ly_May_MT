@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QLMT.DataAccess.Data;
 
@@ -11,9 +12,10 @@ using QLMT.DataAccess.Data;
 namespace QLMT.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240605015443_AddModelToDb")]
+    partial class AddModelToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,31 +71,6 @@ namespace QLMT.DataAccess.Migrations
                     b.HasKey("LineId");
 
                     b.ToTable("Lines");
-                });
-
-            modelBuilder.Entity("QLMT.Models.NetworkRange", b =>
-                {
-                    b.Property<int>("RangeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RangeId"), 1L, 1);
-
-                    b.Property<string>("IpAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RangeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RangeId");
-
-                    b.ToTable("NetworkRanges");
                 });
 
             modelBuilder.Entity("QLMT.Models.Screen", b =>

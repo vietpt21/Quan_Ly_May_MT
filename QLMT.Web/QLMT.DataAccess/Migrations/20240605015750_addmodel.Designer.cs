@@ -12,8 +12,8 @@ using QLMT.DataAccess.Data;
 namespace QLMT.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240530071006_AddModelToDb")]
-    partial class AddModelToDb
+    [Migration("20240605015750_addmodel")]
+    partial class addmodel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,8 +43,9 @@ namespace QLMT.DataAccess.Migrations
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ComputerId");
 
@@ -72,6 +73,31 @@ namespace QLMT.DataAccess.Migrations
                     b.ToTable("Lines");
                 });
 
+            modelBuilder.Entity("QLMT.Models.NetworkRange", b =>
+                {
+                    b.Property<int>("RangeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RangeId"), 1L, 1);
+
+                    b.Property<string>("IpAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RangeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RangeId");
+
+                    b.ToTable("NetworkRanges");
+                });
+
             modelBuilder.Entity("QLMT.Models.Screen", b =>
                 {
                     b.Property<int>("ScreenId")
@@ -87,8 +113,9 @@ namespace QLMT.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ScreenId");
 
@@ -116,20 +143,7 @@ namespace QLMT.DataAccess.Migrations
 
                     b.HasKey("UnitId");
 
-                    b.HasIndex("LineId");
-
                     b.ToTable("Units");
-                });
-
-            modelBuilder.Entity("QLMT.Models.Unit", b =>
-                {
-                    b.HasOne("QLMT.Models.Line", "Line")
-                        .WithMany()
-                        .HasForeignKey("LineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Line");
                 });
 #pragma warning restore 612, 618
         }

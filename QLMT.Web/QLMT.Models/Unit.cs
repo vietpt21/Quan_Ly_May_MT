@@ -14,9 +14,8 @@ namespace QLMT.Models
         public int UnitId { get; set; }
         public string UnitName { get; set; }
         public string Note { get; set; }
-        [Required]
+
         public int LineId { get; set; }
-        [ForeignKey("LineId")]
-        public Line Line { get; set; }
+       
     }
 }

@@ -18,6 +18,7 @@ namespace QLMT.DataAccess.Data
         public DbSet<Unit> Units { get; set; }
         public DbSet<Computer> Computers { get; set; }
         public DbSet<Screen> Screens { get; set; }
+        public DbSet<NetworkRange> NetworkRanges { get; set; }
 
     }
 }

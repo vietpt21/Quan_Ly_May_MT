@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {}
+    "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {
+    "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
         "projectName": "QLMT.DataAccess",
-        "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
+        "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\QLMT.DataAccess.csproj",
         "packagesPath": "C:\\Users\\VIETPT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\NuGet.Config",
+          "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\NuGet.Config",
           "C:\\Users\\VIETPT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
@@ -38,8 +38,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
-                "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj"
+              "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
+                "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj"
               }
             }
           }
@@ -92,21 +92,21 @@
         }
       }
     },
-    "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
+    "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj",
+        "projectUniqueName": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj",
         "projectName": "QLMT.Models",
-        "projectPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj",
+        "projectPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\QLMT.Models.csproj",
         "packagesPath": "C:\\Users\\VIETPT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\QLMT.Models\\obj\\",
+        "outputPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\VIETPT\\Desktop\\QLMT\\QLMT.Web\\NuGet.Config",
+          "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\NuGet.Config",
           "C:\\Users\\VIETPT\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",

@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace QLMT.Models
 {
-    public class Computer
+    public class NetworkRange
     {
-
         [Key]
-        public int ComputerId { get; set; }
-        public string ComputerName { get; set; }
-        public DateTime EntryDate { get; set; }
-        public string Configuration { get; set; }
+        public int RangeId { get; set; }
+        public string RangeName { get; set; }
+        public string IpAddress { get; set; }
         public string Status { get; set; }
     }
 }

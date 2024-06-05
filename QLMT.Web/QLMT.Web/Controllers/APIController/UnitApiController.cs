@@ -21,26 +21,23 @@ namespace QLMT.Web.Controllers.APIController
             return View();
         }
         [HttpGet]
-        public object Get()
+        public object Get(DataSourceLoadOptions loadOptions)
         {
-            DataSourceLoadOptions loadOptions = new DataSourceLoadOptions();
-
-            IEnumerable<Unit> objUnitList = _unitOfWork.Unit.GetAll(includeProperties: "Line");
-
-            return DataSourceLoader.Load(objUnitList, loadOptions);
+            return DataSourceLoader.Load(_unitOfWork.Unit.GetAll(), loadOptions);
         }
 
         [HttpPost]
-        public IActionResult Insert(int id, string values)
+        public IActionResult Post(string values)
         {
-            var unit = _unitOfWork.Unit.GetFirstOrDefault(o => o.UnitId == id);
-            JsonConvert.PopulateObject(values, unit);
-            _unitOfWork.Unit.Add(unit);
+            var newUnit = new Unit();
+            JsonConvert.PopulateObject(values, newUnit);
+            _unitOfWork.Unit.Add(newUnit);
             _unitOfWork.Save();
-            return Ok(unit);
+
+            return Ok();
         }
         [HttpPut]
-        public IActionResult Update(int id, string values)
+        public IActionResult Put(int id, string values)
         {
             var unit = _unitOfWork.Unit.GetFirstOrDefault(o => o.UnitId == id);
             JsonConvert.PopulateObject(values, unit);

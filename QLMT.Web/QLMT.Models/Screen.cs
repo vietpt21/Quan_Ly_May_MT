@@ -13,6 +13,6 @@ namespace QLMT.Models
         public int ScreenId { get; set; }
         public string ScreenName { get; set; }
         public DateTime EntryDate { get; set; }
-        public Boolean Status { get; set; }
+        public string Status { get; set; }
     }
 }
