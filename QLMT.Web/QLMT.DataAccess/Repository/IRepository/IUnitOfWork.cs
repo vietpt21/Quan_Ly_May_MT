@@ -12,6 +12,9 @@ namespace QLMT.DataAccess.Repository.IRepository
         IUnitRepository Unit { get; }
         IComputerRepository Computer { get; }
         IScreenRepository Screen { get; }
+        ILocationManagementRepository LocationManagement { get; }
+        IWareHouseRepository WareHouse { get; }
+        IInventoryRepository Inventoty { get; }
         void Save();
     }
 }

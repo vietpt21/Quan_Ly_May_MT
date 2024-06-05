@@ -50,6 +50,39 @@ namespace QLMT.DataAccess.Migrations
                     b.ToTable("Computers");
                 });
 
+            modelBuilder.Entity("QLMT.Models.Inventory", b =>
+                {
+                    b.Property<int>("InventotyId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InventotyId"), 1L, 1);
+
+                    b.Property<DateTime>("Entry_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Exit_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ItemName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Satatus")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("WareHouseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("InventotyId");
+
+                    b.ToTable("Inventories");
+                });
+
             modelBuilder.Entity("QLMT.Models.Line", b =>
                 {
                     b.Property<int>("LineId")
@@ -69,6 +102,35 @@ namespace QLMT.DataAccess.Migrations
                     b.HasKey("LineId");
 
                     b.ToTable("Lines");
+                });
+
+            modelBuilder.Entity("QLMT.Models.LocationManagement", b =>
+                {
+                    b.Property<int>("ManagementId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ManagementId"), 1L, 1);
+
+                    b.Property<int>("ComputerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RangeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ScreenId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UnitName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ManagementId");
+
+                    b.ToTable("LocationManagements");
                 });
 
             modelBuilder.Entity("QLMT.Models.NetworkRange", b =>
@@ -142,6 +204,27 @@ namespace QLMT.DataAccess.Migrations
                     b.HasKey("UnitId");
 
                     b.ToTable("Units");
+                });
+
+            modelBuilder.Entity("QLMT.Models.WareHouse", b =>
+                {
+                    b.Property<int>("WareHouseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WareHouseId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WareHouseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("WareHouseId");
+
+                    b.ToTable("WareHouses");
                 });
 #pragma warning restore 612, 618
         }

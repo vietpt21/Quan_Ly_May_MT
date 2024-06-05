@@ -19,6 +19,9 @@ namespace QLMT.DataAccess.Data
         public DbSet<Computer> Computers { get; set; }
         public DbSet<Screen> Screens { get; set; }
         public DbSet<NetworkRange> NetworkRanges { get; set; }
+        public DbSet<LocationManagement> LocationManagements { get; set; }
+        public DbSet<WareHouse> WareHouses { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
 
     }
 }

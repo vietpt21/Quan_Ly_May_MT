@@ -18,11 +18,18 @@ namespace QLMT.DataAccess.Repository
             Unit = new UnitRepository(_db);
             Computer = new ComputerRepository(_db);
             Screen = new ScreenRepository(_db);
+            LocationManagement = new LocationManagementRepository(_db);
+            WareHouse = new WareHouseRepository(_db);
+            Inventoty = new InventoryRepository(_db);
         }
         public ILineRepository Line { get; private set; }
         public IUnitRepository Unit { get; private set; }
         public IComputerRepository Computer { get; private set; }
         public IScreenRepository Screen { get; private set; }
+        public ILocationManagementRepository LocationManagement { get; private set; }
+        public IWareHouseRepository WareHouse { get; private set; }
+        public IInventoryRepository Inventoty { get; private set; }
+
 
 
         public void Save()

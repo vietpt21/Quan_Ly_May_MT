@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGluZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/VIETPT/Desktop/Quan_Ly_May_Tinh/Quan_Ly_May_MT/QLMT.Web/QLMT.Web/Views/LocationManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYXRpb25NYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/VIETPT/Desktop/Quan_Ly_May_Tinh/Quan_Ly_May_MT/QLMT.Web/QLMT.Web/Views/Screen/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NyZWVuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/VIETPT/Desktop/Quan_Ly_May_Tinh/Quan_Ly_May_MT/QLMT.Web/QLMT.Web/Views/Unit/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/VIETPT/Desktop/Quan_Ly_May_Tinh/Quan_Ly_May_MT/QLMT.Web/QLMT.Web/Views/WareHouse/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZUhvdXNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/VIETPT/Desktop/Quan_Ly_May_Tinh/Quan_Ly_May_MT/QLMT.Web/QLMT.Web/Views/_ViewImports.cshtml]
