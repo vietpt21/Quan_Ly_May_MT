@@ -21,6 +21,7 @@ namespace QLMT.DataAccess.Repository
             LocationManagement = new LocationManagementRepository(_db);
             WareHouse = new WareHouseRepository(_db);
             Inventoty = new InventoryRepository(_db);
+            NetworkRange = new NetworkRangeRepository(_db);
         }
         public ILineRepository Line { get; private set; }
         public IUnitRepository Unit { get; private set; }
@@ -29,6 +30,7 @@ namespace QLMT.DataAccess.Repository
         public ILocationManagementRepository LocationManagement { get; private set; }
         public IWareHouseRepository WareHouse { get; private set; }
         public IInventoryRepository Inventoty { get; private set; }
+        public INetworkRangeRepository NetworkRange { get; private set; }
 
 
 

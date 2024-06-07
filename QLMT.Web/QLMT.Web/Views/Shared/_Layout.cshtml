@@ -37,6 +37,24 @@
                         .Html("<div>QLMT_Web</div>")
                         .Location(ToolbarItemLocation.Before)
                         .CssClass("header-title");
+                    items.Add()
+                    .Widget(w => w
+                    .Button()
+                    .Text("Login")
+                  @*   .OnClick("location.href='" + Url.Action("Login", "User") + "'") *@
+                    )
+                    .Location(ToolbarItemLocation.After)
+                    .CssClass("login-button");
+                    items.Add()
+                    .Widget(w => w
+                    .Button()
+                    .Text("Register")
+                    @* .OnClick("location.href='" + Url.Action("Register", "User") + "'") *@
+                    )
+                    .Location(ToolbarItemLocation.After)
+                    .CssClass("register-button");
+
+
                 })
             )
         </div>
@@ -70,26 +88,46 @@
         <div class="menu-container dx-swatch-additional">
 
             @functions{
-                string GetUrl(string action) => Url.Action(action);
+            string GetUrl(string controller, string action) => Url.Action(action,controller);
                 string GetCurrentUrl() => Url.Action(ViewContext.RouteData.Values["action"].ToString());
-                bool IsCurrentUrl(string pageName) => GetUrl(pageName) == GetCurrentUrl();
+            bool IsCurrentUrl(string controller, string pageName) => GetUrl(controller,pageName) == GetCurrentUrl();
             }
 
             @(Html.DevExtreme().TreeView()
                 .Items(items =>
                 {
-                    items.Add()
-                        .Text("Home")
-                        .Icon("home")
-                        .Option("path", GetUrl("Index"))
-                        .Selected(IsCurrentUrl("Index"));
+                     items.Add()
+                    .Text("Trang Ch?")
+                    .Icon("home")
+                    .Option("path", GetUrl("Home", "Index"))
+                    .Selected(IsCurrentUrl("Home", "Index"));
 
                     items.Add()
-                        .Text("About")
-                        .Icon("info")
-                        .Option("path", GetUrl("About"))
-                        .Selected(IsCurrentUrl("About"));
+                    .Text("Dòng S?n Ph?m")
+                    .Icon("tags")
+                    .Items(subItems =>
+                    {
+                        subItems.Add()
+                    .Text("Line")
+                    .Icon("chevronright")
+                    .Option("path", GetUrl("Line","Index"))
+                    .Selected(IsCurrentUrl("Line","Index"));
+
+                        subItems.Add()
+                    .Text("Screen")
+                    .Icon("chevronright")
+                    .Option("path", GetUrl("Screen","Index"))
+                    .Selected(IsCurrentUrl("Screen","Index"));
+
+                     
+                        subItems.Add()
+                    .Text("Computer")
+                    .Icon("chevronright")
+                    .Option("path", GetUrl("Computer","Index"))
+                    .Selected(IsCurrentUrl("Computer","Index"));
+                    });
                 })
+
                 .ExpandEvent(TreeViewExpandEvent.Click)
                 .SelectionMode(NavSelectionMode.Single)
                 .SelectedExpr("selected")

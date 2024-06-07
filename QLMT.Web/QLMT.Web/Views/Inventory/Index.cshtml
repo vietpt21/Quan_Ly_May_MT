@@ -1,0 +1,48 @@
+﻿
+
+<div class="card bg-light mb-3">
+    <div class="card-header text-center fs-1">Inventory</div>
+    <div class="card-body">
+
+        @(Html.DevExtreme().DataGrid<QLMT.Models.Inventory>()
+
+            .ElementAttr(new { @class = "dx-card wide-card" })
+            .DataSource(d => d.Mvc()
+            .Controller("InventoryApi")
+            .LoadAction("Get")
+            .InsertAction("Post")
+            .UpdateAction("Put")
+            .DeleteAction("Delete")
+            .Key("InventotyId")
+            )
+            .ShowBorders(false)
+            .FilterRow(f => f.Visible(true))
+            .FocusedRowEnabled(true)
+            .FocusedRowIndex(0)
+            .ColumnAutoWidth(true)
+            .ColumnHidingEnabled(true)
+            .Columns(columns =>
+            {
+                columns.AddFor(m => m.ItemName);
+                columns.AddFor(m => m.Quantity);
+                columns.AddFor(m => m.Entry_Date);
+                columns.AddFor(m => m.Exit_Date);
+                columns.AddFor(m => m.Satatus);
+                columns.AddFor(m => m.WareHouseId)
+                .Width(125)
+                .Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("WareHouseApi").LoadAction("Get").Key("WareHouseId"))
+                .DisplayExpr("WareHouseName")
+                .ValueExpr("WareHouseId")
+                );
+            })
+            .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+            .Paging(p => p.PageSize(10))
+            .Pager(p => p
+            .ShowPageSizeSelector(true)
+            .AllowedPageSizes(new[] { 5, 10, 20 })
+            .ShowInfo(true)
+            )
+            )
+    </div>
+</div>

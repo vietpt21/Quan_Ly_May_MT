@@ -8,83 +8,96 @@
         <p>Resize this responsive page to see the effect!</p>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-sm-5">
-                <h3>Line</h3>
-                @(Html.DevExtreme().DataGrid<QLMT.Models.Line>()
+                <div class="card bg-light ">
+                    <div class="card-header text-center fs-1">Line</div>
+                    <div class="card-body mb-2">
 
-                    .ElementAttr(new { @class = "dx-card wide-card" })
-                    .DataSource(d => d.Mvc()
-                    .Controller("LineApi")
-                    .LoadAction("Get")
-                    .InsertAction("Post")
-                    .UpdateAction("Put")
-                    .DeleteAction("Delete")
-                    .Key("LineId")
-                    )
-                    .ShowBorders(false)
-                    .FilterRow(f => f.Visible(true))
-                    .FocusedRowEnabled(true)
-                    .FocusedRowIndex(0)
-                    .ColumnAutoWidth(true)
-                    .ColumnHidingEnabled(true)
-                    .Columns(columns =>
-                    {
-                        columns.AddFor(m => m.LineName);
-                        columns.AddFor(m => m.Note);
+                        <p class="card-text">
+                            @(Html.DevExtreme().DataGrid<QLMT.Models.Line>()
 
-                    })
-                    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                    .Paging(p => p.PageSize(10))
-                    .Pager(p => p
-                    .ShowPageSizeSelector(true)
-                    .AllowedPageSizes(new[] { 5, 10, 20 })
-                    .ShowInfo(true)
-                    )
-                    )
+                                .ElementAttr(new { @class = "dx-card wide-card" })
+                                .DataSource(d => d.Mvc()
+                                .Controller("LineApi")
+                                .LoadAction("Get")
+                                .InsertAction("Post")
+                                .UpdateAction("Put")
+                                .DeleteAction("Delete")
+                                .Key("LineId")
+                                )
+                                .ShowBorders(false)
+                                .FilterRow(f => f.Visible(true))
+                                .FocusedRowEnabled(true)
+                                .FocusedRowIndex(0)
+                                .ColumnAutoWidth(true)
+                                .ColumnHidingEnabled(true)
+                                .Columns(columns =>
+                                {
+                                    columns.AddFor(m => m.LineName);
+                                    columns.AddFor(m => m.Note);
 
+                                })
+                                .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                                .Paging(p => p.PageSize(10))
+                                .Pager(p => p
+                                .ShowPageSizeSelector(true)
+                                .AllowedPageSizes(new[] { 5, 10, 20 })
+                                .ShowInfo(true)
+                                )
+                                )
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
             <div class="col-sm-5">
-                <h3>Unit</h3>
-                @(Html.DevExtreme().DataGrid<QLMT.Models.Unit>()
+                <div class="card bg-light ">
+                    <div class="card-header text-center fs-1">Unit</div>
+                    <div class="card-body ">
 
-                    .ElementAttr(new { @class = "dx-card wide-card" })
-                    .DataSource(d => d.Mvc()
-                    .Controller("UnitApi")
-                    .LoadAction("Get")
-                    .InsertAction("Post")
-                    .UpdateAction("Put")
-                    .DeleteAction("Delete")
-                    .Key("LineId")
-                    )
-                    .ShowBorders(false)
-                    .FilterRow(f => f.Visible(true))
-                    .FocusedRowEnabled(true)
-                    .FocusedRowIndex(0)
-                    .ColumnAutoWidth(true)
-                    .ColumnHidingEnabled(true)
-                    .Columns(columns =>
-                    {
-                        columns.AddFor(m => m.UnitName);
-                        columns.AddFor(m => m.Note);
-                        columns.AddFor(m => m.LineId)
-                        .Width(125)
-                        .Lookup(lookup => lookup
-                        .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
-                        .DisplayExpr("LineName")
-                        .ValueExpr("LineId")
-                        );
-                    })
-                    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                    .Paging(p => p.PageSize(10))
-                    .Pager(p => p
-                    .ShowPageSizeSelector(true)
-                    .AllowedPageSizes(new[] { 5, 10, 20 })
-                    .ShowInfo(true)
-                    )
-                    )
+                        <p class="card-text">
+                            @(Html.DevExtreme().DataGrid<QLMT.Models.Unit>()
+
+                                .ElementAttr(new { @class = "dx-card wide-card" })
+                                .DataSource(d => d.Mvc()
+                                .Controller("UnitApi")
+                                .LoadAction("Get")
+                                .InsertAction("Post")
+                                .UpdateAction("Put")
+                                .DeleteAction("Delete")
+                                .Key("LineId")
+                                )
+                                .ShowBorders(false)
+                                .FilterRow(f => f.Visible(true))
+                                .FocusedRowEnabled(true)
+                                .FocusedRowIndex(0)
+                                .ColumnAutoWidth(true)
+                                .ColumnHidingEnabled(true)
+                                .Columns(columns =>
+                                {
+                                    columns.AddFor(m => m.UnitName);
+                                    columns.AddFor(m => m.Note);
+                                    columns.AddFor(m => m.LineId)
+                                    .Width(125)
+                                    .Lookup(lookup => lookup
+                                    .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
+                                    .DisplayExpr("LineName")
+                                    .ValueExpr("LineId")
+                                    );
+                                })
+                                .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                                .Paging(p => p.PageSize(10))
+                                .Pager(p => p
+                                .ShowPageSizeSelector(true)
+                                .AllowedPageSizes(new[] { 5, 10, 20 })
+                                .ShowInfo(true)
+                                )
+                                )
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -22,6 +22,7 @@ namespace QLMT.DataAccess.Data
         public DbSet<LocationManagement> LocationManagements { get; set; }
         public DbSet<WareHouse> WareHouses { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
+        public DbSet<Management> Managements { get; set; }
 
     }
 }

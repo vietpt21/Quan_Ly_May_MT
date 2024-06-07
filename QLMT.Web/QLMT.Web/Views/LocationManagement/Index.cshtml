@@ -1,33 +1,39 @@
-﻿@(Html.DevExtreme().DataGrid<QLMT.Models.LocationManagement>()
+﻿
+<div class="card bg-light mb-3" ">
+    <div class="card-header text-center fs-1">Location Management</div>
+    <div class="card-body">
+        @(Html.DevExtreme().DataGrid<QLMT.Models.LocationManagement>()
 
-                    .ElementAttr(new { @class = "dx-card wide-card" })
-                    .DataSource(d => d.Mvc()
-                    .Controller("LocationManagementApi")
-                    .LoadAction("Get")
-                    .InsertAction("Post")
-                    .UpdateAction("Put")
-                    .DeleteAction("Delete")
-                    .Key("ManagementId")
-                    )
-                    .ShowBorders(false)
-                    .FilterRow(f => f.Visible(true))
-                    .FocusedRowEnabled(true)
-                    .FocusedRowIndex(0)
-                    .ColumnAutoWidth(true)
-                    .ColumnHidingEnabled(true)
-                    .Columns(columns =>
-                    {
-                        columns.AddFor(m => m.UnitId);
-                        columns.AddFor(m => m.UnitName);
-                        columns.AddFor(m => m.RangeId);
-                        columns.AddFor(m => m.ScreenId);
-                        columns.AddFor(m => m.ComputerId);
-                    })
-                    .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                    .Paging(p => p.PageSize(10))
-                    .Pager(p => p
-                    .ShowPageSizeSelector(true)
-                    .AllowedPageSizes(new[] { 5, 10, 20 })
-                    .ShowInfo(true)
-                    )
-                    )
+            .ElementAttr(new { @class = "dx-card wide-card" })
+            .DataSource(d => d.Mvc()
+            .Controller("LocationManagementApi")
+            .LoadAction("Get")
+            .InsertAction("Post")
+            .UpdateAction("Put")
+            .DeleteAction("Delete")
+            .Key("ManagementId")
+            )
+            .ShowBorders(false)
+            .FilterRow(f => f.Visible(true))
+            .FocusedRowEnabled(true)
+            .FocusedRowIndex(0)
+            .ColumnAutoWidth(true)
+            .ColumnHidingEnabled(true)
+            .Columns(columns =>
+            {
+                columns.AddFor(m => m.UnitId);
+                columns.AddFor(m => m.UnitName);
+                columns.AddFor(m => m.RangeId);
+                columns.AddFor(m => m.ScreenId);
+                columns.AddFor(m => m.ComputerId);
+            })
+            .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+            .Paging(p => p.PageSize(10))
+            .Pager(p => p
+            .ShowPageSizeSelector(true)
+            .AllowedPageSizes(new[] { 5, 10, 20 })
+            .ShowInfo(true)
+            )
+            )
+    </div>
+</div>

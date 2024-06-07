@@ -1,0 +1,28 @@
+﻿@using QLMT_Web.Models
+
+<h2 class="content-block">Home</h2>
+
+@(Html.DevExtreme().DataGrid<QLMT.Models.Management>()
+    .ElementAttr(new { @class = "dx-card wide-card" })
+    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
+    .ShowBorders(false)
+    .FilterRow(f => f.Visible(true))
+    .FocusedRowEnabled(true)
+    .FocusedRowIndex(0)
+    .ColumnAutoWidth(true)
+    .ColumnHidingEnabled(true)
+    .Columns(columns =>
+    {
+        columns.AddFor(m => m.LineName);
+        columns.AddFor(m => m.UnitName);
+        columns.AddFor(m => m.ComputerName);
+        columns.AddFor(m => m.ScreenName);
+        columns.AddFor(m => m.RangeName);
+    })
+    .Paging(p => p.PageSize(10))
+    .Pager(p => p
+        .ShowPageSizeSelector(true)
+        .AllowedPageSizes(new[] { 5, 10, 20 })
+        .ShowInfo(true)
+    )
+)

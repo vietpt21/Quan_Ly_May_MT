@@ -2,7 +2,7 @@
 
 namespace QLMT.Web.Controllers
 {
-    public class InventoryController1 : Controller
+    public class NetworkRangeController : Controller
     {
         public IActionResult Index()
         {

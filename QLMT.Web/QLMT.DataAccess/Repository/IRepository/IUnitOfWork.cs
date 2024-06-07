@@ -15,6 +15,7 @@ namespace QLMT.DataAccess.Repository.IRepository
         ILocationManagementRepository LocationManagement { get; }
         IWareHouseRepository WareHouse { get; }
         IInventoryRepository Inventoty { get; }
+        INetworkRangeRepository NetworkRange { get; }
         void Save();
     }
 }

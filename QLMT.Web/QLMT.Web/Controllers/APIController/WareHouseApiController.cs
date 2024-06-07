@@ -21,6 +21,7 @@ namespace QLMT.Web.Controllers.APIController
         {
             return DataSourceLoader.Load(_unitOfWork.WareHouse.GetAll(), loadOptions);
         }
+      
 
         [HttpPost]
         public IActionResult Post(string values)
