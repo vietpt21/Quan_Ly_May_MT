@@ -13,17 +13,30 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IManagementRepository, ManagementRepository>();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+/*if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
+}*/
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
 }
+
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 app.UseAuthorization();
 
 app.MapControllerRoute(

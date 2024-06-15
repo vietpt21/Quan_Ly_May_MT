@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QLMT.DataAccess.Data;
 using QLMT.DataAccess.Repository.IRepository;
+using QLMT.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +75,14 @@ namespace QLMT.DataAccess.Repository
             }
         }
 
+        public IEnumerable<Management> GetManagementData()
+        {
+            var query = @"select  * from InforPC";
+            var result = _db.Managements.FromSqlRaw(query).ToList();
+
+            return result;
+
+        }
         public void Remove(T entity)
         {
             dbSet.Remove(entity);

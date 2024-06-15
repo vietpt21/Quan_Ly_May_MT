@@ -24,5 +24,17 @@ namespace QLMT.DataAccess.Data
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Management> Managements { get; set; }
 
+     /*   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Management>()
+                .HasKey(m => m.Id);
+
+            modelBuilder.Entity<Management>()
+                .Property(m => m.Id)
+                .ValueGeneratedOnAdd();
+
+            // Các cấu hình khác
+        }*/
+
     }
 }

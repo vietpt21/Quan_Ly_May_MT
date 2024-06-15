@@ -2,8 +2,10 @@
 using DevExtreme.AspNet.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using QLMT.DataAccess.Repository;
 using QLMT.DataAccess.Repository.IRepository;
 using QLMT.Models;
+using System.Text;
 
 namespace QLMT.Web.Controllers.APIController
 {
@@ -21,17 +23,14 @@ namespace QLMT.Web.Controllers.APIController
         {
             return View();
         }
+       
 
-        [HttpGet]
-        public object Get()
-        {
-            DataSourceLoadOptions loadOptions = new DataSourceLoadOptions();
-
-            IEnumerable<Computer> objComputerList = _unitOfWork.Computer.GetAll();
-
-            return DataSourceLoader.Load(objComputerList, loadOptions);
-        }
-
+        /*  [HttpGet]
+          public object Get(DataSourceLoadOptions loadOptions)
+          {
+              return DataSourceLoader.Load(_unitOfWork.Computer.GetAll(), loadOptions);
+          }
+  */
         [HttpPost]
         public IActionResult Post(string values)
         {
@@ -60,5 +59,11 @@ namespace QLMT.Web.Controllers.APIController
             _unitOfWork.Save();
         }
 
+        [HttpGet]
+        public object Get(DataSourceLoadOptions loadOptions)
+        {
+            var data = _unitOfWork.Computer.GetAll();
+            return DataSourceLoader.Load(data, loadOptions);
+        }
     }
 }

@@ -1,28 +1,186 @@
-﻿@using QLMT_Web.Models
+﻿
 
-<h2 class="content-block">Home</h2>
-
+<div class="card bg-light mb-3" ">
+    <div class="card-header text-center fs-1">Management</div>
+    <div class="card-body">
 @(Html.DevExtreme().DataGrid<QLMT.Models.Management>()
-    .ElementAttr(new { @class = "dx-card wide-card" })
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
-    .ShowBorders(false)
-    .FilterRow(f => f.Visible(true))
-    .FocusedRowEnabled(true)
-    .FocusedRowIndex(0)
-    .ColumnAutoWidth(true)
-    .ColumnHidingEnabled(true)
+    .ID("gridContainer")
+    .ShowBorders(true)
+    .Paging(paging => paging.Enabled(false))
+    .Editing(editing =>
+    {
+        editing.Mode(GridEditMode.Form);
+        editing.AllowUpdating(true);
+        editing.AllowAdding(true);
+        editing.AllowDeleting(true);
+    })
     .Columns(columns =>
     {
-        columns.AddFor(m => m.LineName);
-        columns.AddFor(m => m.UnitName);
-        columns.AddFor(m => m.ComputerName);
-        columns.AddFor(m => m.ScreenName);
-        columns.AddFor(m => m.RangeName);
+        columns.AddFor(m => m.LineId)
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
+        .DisplayExpr("LineName")
+        .ValueExpr("LineId")
+        );
+
+        columns.AddFor(m => m.UnitId)
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("UnitApi").LoadAction("Get").Key("UnitId"))
+        .DisplayExpr("UnitName")
+        .ValueExpr("UnitId")
+        );
+
+        columns.AddFor(m => m.ComputerId)
+        
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("ComputerApi").LoadAction("Get").Key("ComputerId"))
+        .DisplayExpr("ComputerName")
+        .ValueExpr("ComputerId")
+        );
+        columns.AddFor(m => m.ScreenId)
+       
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("ScreenApi").LoadAction("Get").Key("Id"))
+        .DisplayExpr("ScreenName")
+        .ValueExpr("ScreenId")
+        );
+
+        columns.AddFor(m => m.RangeId)
+        .Width(125)
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
+        .DisplayExpr("IpAddress")
+        .ValueExpr("RangeId")
+        );
+        columns.AddFor(m => m.RangeId)
+       
+        .Lookup(lookup => lookup
+        .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
+        .DisplayExpr("RangeName")
+        .ValueExpr("RangeId")
+        );
+
     })
-    .Paging(p => p.PageSize(10))
-    .Pager(p => p
-        .ShowPageSizeSelector(true)
-        .AllowedPageSizes(new[] { 5, 10, 20 })
-        .ShowInfo(true)
+    .DataSource(d => d.Mvc()
+    .Controller("ManagementApi")
+    .LoadAction("Get")
+    .UpdateAction("Put")
+    .InsertAction("Post")
+    .DeleteAction("Delete")
+    .Key("Id")
     )
-)
+    )
+    </div>
+</div>
+
+
+
+<button id="addComputerButton" class="btn btn-primary mb-3">Add Computer</button>
+<!-- Container for the new Computer DataGrid -->
+<div id="computerTableContainer"></div>
+
+
+<button id="addScreenButton" class="btn btn-primary mb-3">Add Screen</button>
+<!-- Container for the new Computer DataGrid -->
+<div id="screenTableContainer"></div>
+
+<script>
+    $(function () {
+        $("#addComputerButton").click(function () {
+            // Define the new DataGrid for the Computer table
+            $("#computerTableContainer").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "ComputerId",
+                    loadUrl: "http://localhost:50054/api/ComputerApi",
+                    insertUrl: "http://localhost:50054/api/ComputerApi",
+                    updateUrl: "http://localhost:50054/api/ComputerApi",
+                    deleteUrl: "http://localhost:50054/api/ComputerApi"
+                }),
+                columns: [
+                    {
+                        dataField: "ComputerName",
+                        caption: "Computer Name",
+                        validationRules: [{ type: "required" }]
+                    },
+                    {
+                        dataField: "EntryDate",
+                        caption: "Entry Date",
+                        dataType: "date"
+                    },
+                    {
+                        dataField: "Configuration",
+                        caption: "Configuration"
+                    },
+                    {
+                        dataField: "Status",
+                        caption: "Status"
+                    }
+                ],
+                editing: {
+                    mode: "form",
+                    allowUpdating: true,
+                    allowAdding: true,
+                    allowDeleting: true
+                },
+                showBorders: true
+            }).show();
+        });
+        $(document).mouseup(function (e) {
+            var container = $("#computerTableContainer");
+
+            // If the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                container.hide();
+            }
+        });
+    });
+</script>
+
+
+<script>
+    $(function () {
+        $("#addScreenButton").click(function () {
+            // Define the new DataGrid for the Computer table
+            $("#screenTableContainer").dxDataGrid({
+                dataSource: DevExpress.data.AspNet.createStore({
+                    key: "ScreenId",
+                    loadUrl: "http://localhost:50054/api/ScreenApi",
+                    insertUrl: "http://localhost:50054/api/ScreenApi",
+                    updateUrl: "http://localhost:50054/api/ScreenApi",
+                    deleteUrl: "http://localhost:50054/api/ScreenApi"
+                }),
+                columns: [
+                    {
+                        dataField: "ScreenName",
+                        caption: "Screen Name",
+                        validationRules: [{ type: "required" }]
+                    },
+                    {
+                        dataField: "EntryDate",
+                        caption: "Entry Date",
+                        dataType: "date"
+                    },
+                    {
+                        dataField: "Status",
+                        caption: "Status"
+                    }
+                ],
+                editing: {
+                    mode: "form",
+                    allowUpdating: true,
+                    allowAdding: true,
+                    allowDeleting: true
+                },
+                showBorders: true
+            }).show();
+        });
+        $(document).mouseup(function (e) {
+            var container = $("#screenTableContainer");
+
+            // If the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                container.hide();
+            }
+        });
+    });
+</script>

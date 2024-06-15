@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using QLMT.DataAccess.Repository.IRepository;
 using QLMT.Models;
+using System.Xml.Linq;
 
 namespace QLMT.Web.Controllers.APIController
 {
@@ -36,19 +37,21 @@ namespace QLMT.Web.Controllers.APIController
 
             return Ok();
         }
+
         [HttpPut]
-        public IActionResult Put(int id, string values)
+        public IActionResult Put(int key, string values)
         {
-            var unit = _unitOfWork.Unit.GetFirstOrDefault(o => o.UnitId == id);
-            JsonConvert.PopulateObject(values, unit);
-            _unitOfWork.Unit.Update(unit);
+            var newUnit = _unitOfWork.Unit.GetFirstOrDefault(a => a.UnitId == key);
+            JsonConvert.PopulateObject(values, newUnit);
             _unitOfWork.Save();
-            return Ok(unit);
+
+            return Ok();
         }
+
         [HttpDelete]
-        public void Delete(int id)
+        public void Delete(int key)
         {
-            var unit = _unitOfWork.Unit.GetFirstOrDefault(o => o.UnitId == id);
+            var unit = _unitOfWork.Unit.GetFirstOrDefault(a => a.UnitId == key);
             _unitOfWork.Unit.Remove(unit);
             _unitOfWork.Save();
         }
