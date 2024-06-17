@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\qlmt.web\\views\\management\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmt.web\\views\\management\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\views\\management\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA72BCDE-6732-4825-83B8-C2866BE76FF3}|QLMT.DataAccess\\QLMT.DataAccess.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmt.dataaccess\\repository\\managementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FA72BCDE-6732-4825-83B8-C2866BE76FF3}|QLMT.DataAccess\\QLMT.DataAccess.csproj|C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\qlmt.dataaccess\\repository\\managementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA72BCDE-6732-4825-83B8-C2866BE76FF3}|QLMT.DataAccess\\QLMT.DataAccess.csproj|solutionrelative:qlmt.dataaccess\\repository\\managementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\qlmt.web\\controllers\\apicontroller\\managementapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\controllers\\apicontroller\\managementapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmt.web\\views\\line\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\views\\line\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmt.web\\controllers\\apicontroller\\unitapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\controllers\\apicontroller\\unitapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,34 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UnitApiController.cs",
-              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Controllers\\APIController\\UnitApiController.cs",
-              "RelativeDocumentMoniker": "QLMT.Web\\Controllers\\APIController\\UnitApiController.cs",
-              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Controllers\\APIController\\UnitApiController.cs",
-              "RelativeToolTip": "QLMT.Web\\Controllers\\APIController\\UnitApiController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAtwBoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T07:20:52.903Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Views\\Line\\Index.cshtml",
-              "RelativeDocumentMoniker": "QLMT.Web\\Views\\Line\\Index.cshtml",
-              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Views\\Line\\Index.cshtml",
-              "RelativeToolTip": "QLMT.Web\\Views\\Line\\Index.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAmwEoAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T07:13:25.445Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -66,7 +32,7 @@
               "RelativeDocumentMoniker": "QLMT.Web\\Views\\Management\\Index.cshtml",
               "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Views\\Management\\Index.cshtml",
               "RelativeToolTip": "QLMT.Web\\Views\\Management\\Index.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAADkAAABdAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAIwCEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-15T04:01:29.424Z",
               "EditorCaption": ""
@@ -92,7 +58,7 @@
               "RelativeDocumentMoniker": "QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
               "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
               "RelativeToolTip": "QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAA0wEAAAAAJAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAvwE0AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T03:57:52.749Z",
               "EditorCaption": ""

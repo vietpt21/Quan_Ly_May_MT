@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLMT.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+222bed1e16708dc41705a8559217d842f29c27a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97a9ea12ff2a139d135a4de6d3c06118ac4eb9c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLMT.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLMT.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

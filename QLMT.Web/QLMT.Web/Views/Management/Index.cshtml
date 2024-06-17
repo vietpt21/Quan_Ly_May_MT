@@ -17,49 +17,45 @@
     .Columns(columns =>
     {
         columns.AddFor(m => m.LineId)
+        .Caption("Line Name")
         .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
+        .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get"))
         .DisplayExpr("LineName")
         .ValueExpr("LineId")
         );
 
         columns.AddFor(m => m.UnitId)
+        .Caption("Unit Name")
         .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("UnitApi").LoadAction("Get").Key("UnitId"))
+        .DataSource(d => d.Mvc().Controller("UnitApi").LoadAction("Get"))
         .DisplayExpr("UnitName")
         .ValueExpr("UnitId")
         );
 
         columns.AddFor(m => m.ComputerId)
-        
+        .Caption("Computer")
         .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("ComputerApi").LoadAction("Get").Key("ComputerId"))
+        .DataSource(d => d.Mvc().Controller("ComputerApi").LoadAction("Get"))
         .DisplayExpr("ComputerName")
         .ValueExpr("ComputerId")
         );
+
         columns.AddFor(m => m.ScreenId)
-       
+        .Caption("Screen Name")
         .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("ScreenApi").LoadAction("Get").Key("Id"))
+        .DataSource(d => d.Mvc().Controller("ScreenApi").LoadAction("Get"))
         .DisplayExpr("ScreenName")
         .ValueExpr("ScreenId")
         );
 
         columns.AddFor(m => m.RangeId)
+        .Caption("IpAddress")
         .Width(125)
         .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
+        .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get"))
         .DisplayExpr("IpAddress")
         .ValueExpr("RangeId")
         );
-        columns.AddFor(m => m.RangeId)
-       
-        .Lookup(lookup => lookup
-        .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
-        .DisplayExpr("RangeName")
-        .ValueExpr("RangeId")
-        );
-
     })
     .DataSource(d => d.Mvc()
     .Controller("ManagementApi")
