@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using QLMT.DataAccess.Data;
 using QLMT.DataAccess.Repository.IRepository;
 using QLMT.DataAccess.Repository;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<IManagementRepository, ManagementRepository>();
@@ -37,6 +41,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+app.UseAuthentication();;
 app.UseAuthorization();
 
 app.MapControllerRoute(

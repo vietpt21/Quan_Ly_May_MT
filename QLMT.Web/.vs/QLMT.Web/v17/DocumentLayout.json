@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmt.web\\views\\management\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\views\\management\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmtweb\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|solutionrelative:qlmtweb\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA72BCDE-6732-4825-83B8-C2866BE76FF3}|QLMT.DataAccess\\QLMT.DataAccess.csproj|C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\qlmt.dataaccess\\repository\\managementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA72BCDE-6732-4825-83B8-C2866BE76FF3}|QLMT.DataAccess\\QLMT.DataAccess.csproj|solutionrelative:qlmt.dataaccess\\repository\\managementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmtweb\\areas\\admin\\views\\editdatatable\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|solutionrelative:qlmtweb\\areas\\admin\\views\\editdatatable\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\qlmt.web\\controllers\\apicontroller\\managementapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97CB83BD-1B2C-44AE-909C-8DC28BECD0AC}|QLMT.Web\\QLMT.Web.csproj|solutionrelative:qlmt.web\\controllers\\apicontroller\\managementapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmtweb\\areas\\admin\\views\\datatable\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|solutionrelative:qlmtweb\\areas\\admin\\views\\datatable\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|c:\\users\\vietpt\\desktop\\quan_ly_may_tinh\\quan_ly_may_mt\\qlmt.web\\qlmtweb\\areas\\admin\\views\\line\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5A1E1A5C-D13E-4766-811E-9E3B1FADF5FA}|QLMTWEB\\QLMTWEB.csproj|solutionrelative:qlmtweb\\areas\\admin\\views\\line\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Views\\Management\\Index.cshtml",
-              "RelativeDocumentMoniker": "QLMT.Web\\Views\\Management\\Index.cshtml",
-              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Views\\Management\\Index.cshtml",
-              "RelativeToolTip": "QLMT.Web\\Views\\Management\\Index.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAIwCEAAAAAAAAA",
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "QLMTWEB\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "QLMTWEB\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AQIAAEwCAAAAAAAAAAAlwFwCAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-15T04:01:29.424Z",
+              "WhenOpened": "2024-07-01T11:07:50.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\Line\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLMTWEB\\Areas\\Admin\\Views\\Line\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\Line\\Index.cshtml",
+              "RelativeToolTip": "QLMTWEB\\Areas\\Admin\\Views\\Line\\Index.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACAAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T09:19:42.404Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ManagementRepository.cs",
-              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\Repository\\ManagementRepository.cs",
-              "RelativeDocumentMoniker": "QLMT.DataAccess\\Repository\\ManagementRepository.cs",
-              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.DataAccess\\Repository\\ManagementRepository.cs",
-              "RelativeToolTip": "QLMT.DataAccess\\Repository\\ManagementRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBQAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T03:59:48.673Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\EditDataTable\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLMTWEB\\Areas\\Admin\\Views\\EditDataTable\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\EditDataTable\\Index.cshtml",
+              "RelativeToolTip": "QLMTWEB\\Areas\\Admin\\Views\\EditDataTable\\Index.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAB0AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T09:15:59.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ManagementApiController.cs",
-              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
-              "RelativeDocumentMoniker": "QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
-              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
-              "RelativeToolTip": "QLMT.Web\\Controllers\\APIController\\ManagementApiController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAvwE0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T03:57:52.749Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\DataTable\\Index.cshtml",
+              "RelativeDocumentMoniker": "QLMTWEB\\Areas\\Admin\\Views\\DataTable\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VIETPT\\Desktop\\Quan_Ly_May_Tinh\\Quan_Ly_May_MT\\QLMT.Web\\QLMTWEB\\Areas\\Admin\\Views\\DataTable\\Index.cshtml",
+              "RelativeToolTip": "QLMTWEB\\Areas\\Admin\\Views\\DataTable\\Index.cshtml",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAowMsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T07:12:07.841Z",
               "EditorCaption": ""
             }
           ]

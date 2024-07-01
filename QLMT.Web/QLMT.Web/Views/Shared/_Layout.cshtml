@@ -1,3 +1,4 @@
+@using Microsoft.AspNetCore.Identity
 <!DOCTYPE html>
 
 <html>
@@ -37,22 +38,10 @@
                         .Html("<div>QLMT_Web</div>")
                         .Location(ToolbarItemLocation.Before)
                         .CssClass("header-title");
-                    items.Add()
-                    .Widget(w => w
-                    .Button()
-                    .Text("Login")
-                  @*   .OnClick("location.href='" + Url.Action("Login", "User") + "'") *@
-                    )
-                    .Location(ToolbarItemLocation.After)
-                    .CssClass("login-button");
-                    items.Add()
-                    .Widget(w => w
-                    .Button()
-                    .Text("Register")
-                    @* .OnClick("location.href='" + Url.Action("Register", "User") + "'") *@
-                    )
-                    .Location(ToolbarItemLocation.After)
-                    .CssClass("register-button");
+
+
+                          
+                   
 
 
                 })
@@ -97,13 +86,13 @@
                 .Items(items =>
                 {
                      items.Add()
-                    .Text("Trang Ch?")
+                    .Text("Trang Chu")
                     .Icon("home")
                     .Option("path", GetUrl("Home", "Index"))
                     .Selected(IsCurrentUrl("Home", "Index"));
 
                     items.Add()
-                    .Text("Dòng S?n Ph?m")
+                    .Text("Dòng San Pham")
                     .Icon("tags")
                     .Items(subItems =>
                     {
@@ -125,7 +114,24 @@
                     .Icon("chevronright")
                     .Option("path", GetUrl("Computer","Index"))
                     .Selected(IsCurrentUrl("Computer","Index"));
+
+
+                        subItems.Add()
+                    .Text("Management")
+                    .Icon("chevronright")
+                    .Option("path", GetUrl("Management", "Index"))
+                    .Selected(IsCurrentUrl("Management", "Index"));
+
+
+                        subItems.Add()
+                    .Text("Datatable")
+                    .Icon("chevronright")
+                    .Option("path", GetUrl("Datatable", "Index"))
+                    .Selected(IsCurrentUrl("Datatable", "Index"));
+
+
                     });
+
                 })
 
                 .ExpandEvent(TreeViewExpandEvent.Click)

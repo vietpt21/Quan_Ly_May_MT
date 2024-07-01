@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLMT.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97a9ea12ff2a139d135a4de6d3c06118ac4eb9c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2162c862c554f911833abe38141ac5de703bfe1")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLMT.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLMT.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

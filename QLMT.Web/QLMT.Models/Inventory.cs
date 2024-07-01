@@ -11,7 +11,7 @@ namespace QLMT.Models
     {
         [Key]
         public int InventotyId { get; set; }
-        public string ItemName { get; set; }
+        public string? ItemName { get; set; }
         public int Quantity { get; set; }
         public DateTime Entry_Date { get; set; }
         public DateTime Exit_Date { get; set; }

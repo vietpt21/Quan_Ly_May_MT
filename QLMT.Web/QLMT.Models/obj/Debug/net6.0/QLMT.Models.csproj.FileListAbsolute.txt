@@ -13,6 +13,7 @@ C:\Users\VIETPT\Desktop\QLMT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.s
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.deps.json
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.dll
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\bin\Debug\net6.0\QLMT.Models.pdb
+C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.csproj.AssemblyReference.cache
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.AssemblyInfoInputs.cache
 C:\Users\VIETPT\Desktop\Quan_Ly_May_Tinh\Quan_Ly_May_MT\QLMT.Web\QLMT.Models\obj\Debug\net6.0\QLMT.Models.AssemblyInfo.cs

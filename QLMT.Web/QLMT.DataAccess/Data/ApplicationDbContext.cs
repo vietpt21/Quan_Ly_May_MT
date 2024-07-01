@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QLMT.Models;
 using System;
 using System.Collections;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace QLMT.DataAccess.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -23,18 +25,12 @@ namespace QLMT.DataAccess.Data
         public DbSet<WareHouse> WareHouses { get; set; }
         public DbSet<Inventory> Inventories { get; set; }
         public DbSet<Management> Managements { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
-     /*   protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Management>()
-                .HasKey(m => m.Id);
-
-            modelBuilder.Entity<Management>()
-                .Property(m => m.Id)
-                .ValueGeneratedOnAdd();
-
-            // Các cấu hình khác
-        }*/
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }
