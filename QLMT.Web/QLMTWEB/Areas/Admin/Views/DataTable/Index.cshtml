@@ -1,0 +1,231 @@
+﻿<body data-topbar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container">
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                            <h2 class=" text-center mt-3">List Line</h2>
+                                <table id="tblDataLine" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>NameLine</th>
+                                            <th>Note</th>
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                            </div>
+                            <div class="col-sm-12">
+                            <h2 class=" text-center mt-3">List Unit</h2>
+                                <table id="tblDataUnit" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name Unit</th>
+                                            <th>Name Line</th>
+                                            <th>Note</th>
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                            </div>
+                            <div class="col-sm-12">
+                                <h2 class=" text-center mt-3">List Computer</h2>
+                                <table id="tblDataComputer" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name Computer</th>                           
+                                            <th>Entry Date</th>
+                                            <th>Configuration</th>
+                                            <th>Status</th>
+                                       
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                                </div>
+                            <div class="col-sm-12">
+                                <h2 class=" text-center mt-3">List Screen</h2>
+                                <table id="tblDataScreen" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                        <th>Name Computer</th>
+                                            <th>Entry Date</th>
+                                            <th>Status</th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                            </div>
+                            <div class="col-sm-12">
+                                <h2 class=" text-center mt-3">List Network Ranges</h2>
+                                <table id="tblDataNetwork" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name Range</th>
+                                            <th>IpAddress</th>
+                                            <th>Status</th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                            </div>
+                            <div class="col-sm-12">
+                                <h2 class=" text-center mt-3">Managemnet</h2>
+                            <table id="tblDataManagement" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name Unit</th>
+                                            <th>Nmae Line</th>
+                                            <th>Name Computer</th>
+                                            <th>Name Range</th>
+                                            <th>IpAdress </th>
+                                            <th>Name Screen</th>
+
+
+                                        </tr>
+                                    </thead>
+                                </table> <!-- end row -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </body>
+<script>
+    var dataTableLine;
+    var dataTableUnit;
+    var dataTableComputer;
+    var dataTableScreen;
+    var dataTableNetwork;
+    var dataTableManagement;
+    var lineData = [];
+    
+
+    // Hàm loadDataTable được gọi khi tài liệu sẵn sàng
+    $(document).ready(function () {
+        loadDataTable();
+    });
+
+    function loadDataTable() {
+        // Lấy dữ liệu từ API lineApi
+        $.ajax({
+            url: '/api/lineApi',
+            method: 'GET',
+            success: function (data) {
+                lineData = data.data;
+                // Sau khi lấy xong dữ liệu line, tiếp tục lấy dữ liệu unit
+                loadUnitDataTable();
+               
+            }
+        });
+
+        dataTableLine = $('#tblDataLine').DataTable({
+            "ajax": {
+                "url": "/api/lineApi",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "LineName" },
+                { "data": "Note" },
+            ]
+        });
+        dataTableComputer = $('#tblDataComputer').DataTable({
+            "ajax": {
+                "url": "/api/computerApi",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "ComputerName" },
+                { "data": "EntryDate" },
+                { "data": "Configuration" },
+                { "data": "Status" },
+             
+            ]
+        });
+        dataTableScreen = $('#tblDataScreen').DataTable({
+            "ajax": {
+                "url": "/api/ScreenApi",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "ScreenName" },
+                { "data": "EntryDate" },
+                { "data": "Status" },
+            ]
+        });
+        dataTableNetwork = $('#tblDataNetwork').DataTable({
+            "ajax": {
+                "url": "/api/networkrangeApi",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "RangeName" },
+                { "data": "IpAddress" },
+                { "data": "Status" },
+            ]
+        });
+        dataTableManagement = $('#tblDataManagement').DataTable({
+            "ajax": {
+                "url": "/api/ManagementApi",
+                "dataSrc": "data"
+            },
+            "columns": [
+               
+                { "data": "UnitName" },
+                { "data": "LineName" },
+                { "data": "ComputerName" },
+                { "data": "RangeName" },
+                { "data": "IpAddress" },
+                { "data": "ScreenName" },
+            ]
+        });
+       
+
+    }
+    function loadUnitDataTable() {
+        // Lấy dữ liệu từ API UnitApi
+        $.ajax({
+            url: '/api/UnitApi',
+            method: 'GET',
+            success: function (data) {
+                var unitData = data.data;
+
+                // Kết hợp dữ liệu line và unit
+                var combinedData = unitData.map(function (unit) {
+                    var line = lineData.find(function (line) {
+                        return line.LineId === unit.LineId;
+                    });
+                    return {
+                        UnitName: unit.UnitName,
+                        Note: unit.Note,
+                        LineName: line ? line.LineName : ''
+                    };
+                });
+
+                // Khởi tạo DataTable với dữ liệu đã được kết hợp
+                dataTableUnit = $('#tblDataUnit').DataTable({
+                    data: combinedData,
+                    columns: [
+                        { "data": "UnitName" },
+                        { "data": "LineName" },
+                        { "data": "Note" },
+                       
+                    ]
+                });
+            }
+        });
+    }
+  
+</script>

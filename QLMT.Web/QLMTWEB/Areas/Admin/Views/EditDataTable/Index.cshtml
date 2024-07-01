@@ -1,0 +1,343 @@
+﻿
+
+<div class="container fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">Line</div>
+                <div class="card-body">
+
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.Line>()
+                        .ID("gridContainer")
+                        .ShowBorders(true)
+                        .Paging(p => p.PageSize(10))  // Kích thước trang mặc định là 10
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)  // Hiển thị bộ chọn kích thước trang
+                        .AllowedPageSizes(new[] { 5, 10, 20 })  // Các tùy chọn kích thước trang
+                        .ShowInfo(true)  // Hiển thị thông tin phân trang
+                        )
+                        .Editing(e => e
+                        .Mode(GridEditMode.Popup)  // Chế độ chỉnh sửa là Popup
+                        .AllowUpdating(true)  // Cho phép cập nhật
+                        .AllowAdding(true)  // Cho phép thêm
+                        .AllowDeleting(true)  // Cho phép xóa
+                        .Popup(p => p
+                        .Title("Line")
+                        .ShowTitle(true)
+                        .Width(700)
+                        .Height(525)
+                        )
+                        .Form(f => f.Items(items =>
+                        {
+                            items.AddGroup()
+                            .ColCount(2)
+                            .ColSpan(2)
+                            .Items(groupItems =>
+                            {
+                                groupItems.AddSimpleFor(m => m.LineName);
+                                groupItems.AddSimpleFor(m => m.Note)
+                            .ColSpan(2)
+                            .Editor(editor => editor.TextArea().Height(100));
+                            });
+                        }))
+                        )
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.LineName);
+                            columns.AddFor(m => m.Note)
+                            .Visible(false);
+                        })
+                        .DataSource(d => d.Mvc()
+                        .Controller("LineApi")
+                        .LoadAction("Get")
+                        .UpdateAction("Put")
+                        .InsertAction("Post")
+                        .DeleteAction("Delete")
+                        .Key("LineId")
+                        )
+                        )
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">Unit</div>
+                <div class="card-body">
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.Unit>()
+                        .ID("unitGridContainer")
+                        .ShowBorders(true)
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)
+                        .AllowedPageSizes(new[] { 5, 10, 20 })
+                        .ShowInfo(true)
+                        )
+                        .Editing(e => e.Mode(GridEditMode.Popup)
+                        .AllowUpdating(true)
+                        .AllowAdding(true)
+                        .AllowDeleting(true)
+                        .Popup(p => p
+                        .Title("Unit")
+                        .ShowTitle(true)
+                        .Width(700)
+                        .Height(525)
+                        )
+                        .Form(f => f.Items(items =>
+                        {
+                            items.AddGroup()
+                            .ColCount(2)
+                            .ColSpan(2)
+                            .Items(groupItems =>
+                            {
+                                groupItems.AddSimpleFor(m => m.UnitName);
+                                groupItems.AddSimpleFor(m => m.Note)
+                            .ColSpan(2)
+                            .Editor(editor => editor.TextArea().Height(100));
+                            });
+                            items.AddGroup()
+                            .ColCount(1)
+                            .ColSpan(1)
+                            .Items(groupItems =>
+                            {
+                                groupItems.AddSimpleFor(m => m.LineId);
+                            });
+                        }))
+                        )
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.UnitName);
+                            columns.AddFor(m => m.LineId).Caption("Name Line")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
+                            .DisplayExpr("LineName")
+                            .ValueExpr("LineId")
+                            );
+                            columns.AddFor(m => m.Note)
+                            .Visible(false);
+                        })
+                        .DataSource(d => d.Mvc()
+                        .Controller("UnitApi")
+                        .LoadAction("Get")
+                        .UpdateAction("Put")
+                        .InsertAction("Post")
+                        .DeleteAction("Delete")
+                        .Key("UnitId")
+                        )
+                        )
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">Computer</div>
+                <div class="card-body">
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.Computer>()
+
+                        .ElementAttr(new { @class = "dx-card wide-card" })
+                        .DataSource(d => d.Mvc()
+                        .Controller("ComputerApi")
+                        .LoadAction("Get")
+                        .InsertAction("Post")
+                        .UpdateAction("Put")
+                        .DeleteAction("Delete")
+                        .Key("ComputerId")
+                        )
+                        .ShowBorders(false)
+                        .FilterRow(f => f.Visible(true))
+                        .FocusedRowEnabled(true)
+                        .FocusedRowIndex(0)
+                        .ColumnAutoWidth(true)
+                        .ColumnHidingEnabled(true)
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.ComputerName);
+                            columns.AddFor(m => m.Configuration);
+                            columns.AddFor(m => m.EntryDate);
+                            columns.AddFor(m => m.Status);
+
+                        })
+                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)
+                        .AllowedPageSizes(new[] { 5, 10, 20 })
+                        .ShowInfo(true)
+                        )
+                        )
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">Screen</div>
+                <div class="card-body">
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.Screen>()
+
+                        .ElementAttr(new { @class = "dx-card wide-card" })
+                        .DataSource(d => d.Mvc()
+                        .Controller("ScreenApi")
+                        .LoadAction("Get")
+                        .InsertAction("Post")
+                        .UpdateAction("Put")
+                        .DeleteAction("Delete")
+                        .Key("ScreenId")
+                        )
+                        .ShowBorders(false)
+                        .FilterRow(f => f.Visible(true))
+                        .FocusedRowEnabled(true)
+                        .FocusedRowIndex(0)
+                        .ColumnAutoWidth(true)
+                        .ColumnHidingEnabled(true)
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.ScreenName);
+                            columns.AddFor(m => m.EntryDate);
+                            columns.AddFor(m => m.Status);
+
+                        })
+                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)
+                        .AllowedPageSizes(new[] { 5, 10, 20 })
+                        .ShowInfo(true)
+                        )
+                        )
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">NetworkRange</div>
+                <div class="card-body">
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.NetworkRange>()
+
+                        .ElementAttr(new { @class = "dx-card wide-card" })
+                        .DataSource(d => d.Mvc()
+                        .Controller("NetworkRangeApi")
+                        .LoadAction("Get")
+                        .InsertAction("Post")
+                        .UpdateAction("Put")
+                        .DeleteAction("Delete")
+                        .Key("RangeId")
+                        )
+                        .ShowBorders(false)
+                        .FilterRow(f => f.Visible(true))
+                        .FocusedRowEnabled(true)
+                        .FocusedRowIndex(0)
+                        .ColumnAutoWidth(true)
+                        .ColumnHidingEnabled(true)
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.RangeName);
+                            columns.AddFor(m => m.IpAddress);
+                            columns.AddFor(m => m.Status);
+
+                        })
+                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)
+                        .AllowedPageSizes(new[] { 5, 10, 20 })
+                        .ShowInfo(true)
+                        )
+                        )
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center fs-1">Management</div>
+                <div class="card-body">
+                    @(Html.DevExtreme().DataGrid<QLMT.Models.Management>()
+                        .ID("ManagementGridContainer")
+                        .ShowBorders(true)
+                        .Paging(p => p.PageSize(10))
+                        .Pager(p => p
+                        .ShowPageSizeSelector(true)
+                        .AllowedPageSizes(new[] { 5, 10, 20 })
+                        .ShowInfo(true)
+                        )
+                        .Editing(e => e.Mode(GridEditMode.Popup)
+                        .AllowUpdating(true)
+                        .AllowAdding(true)
+                        .AllowDeleting(true)
+                        .Popup(p => p
+                        .Title("Unit")
+                        .ShowTitle(true)
+                        .Width(700)
+                        .Height(525)
+                        )
+                        .Form(f => f.Items(items =>
+                        {
+
+                            items.AddGroup()
+                            .ColCount(2)
+                            .ColSpan(2)
+                            .Items(groupItems =>
+                            {
+                                groupItems.AddSimpleFor(m => m.LineId);
+                                groupItems.AddSimpleFor(m => m.ComputerId);
+                                groupItems.AddSimpleFor(m => m.RangeId);
+                                groupItems.AddSimpleFor(m => m.ScreenId);
+                                groupItems.AddSimpleFor(m => m.UnitId);
+                            });
+
+                        }))
+                        )
+                        .Columns(columns =>
+                        {
+                            columns.AddFor(m => m.LineId).Caption("Name Line")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
+                            .DisplayExpr("LineName")
+                            .ValueExpr("LineId")
+                            );
+                            columns.AddFor(m => m.UnitId).Caption("Name Unit")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("UnitApi").LoadAction("Get").Key("UnitId"))
+                            .DisplayExpr("UnitName")
+                            .ValueExpr("UnitId")
+                            );
+                            columns.AddFor(m => m.ComputerId).Caption("Name Computer")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("ComputerApi").LoadAction("Get").Key("ComputerId"))
+                            .DisplayExpr("ComputerName")
+                            .ValueExpr("ComputerId")
+                            );
+                            columns.AddFor(m => m.ScreenId).Caption("Name Screen")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("ScreenApi").LoadAction("Get").Key("ScreenId"))
+                            .DisplayExpr("ScreenName")
+                            .ValueExpr("ScreenId")
+                            );
+                            columns.AddFor(m => m.RangeId).Caption("IpAddress")
+                            .Lookup(lookup => lookup
+                            .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
+                            .DisplayExpr("IpAddress")
+                            .ValueExpr("RangeId")
+                            );
+
+                        })
+                        .DataSource(d => d.Mvc()
+                        .Controller("ManagementApi")
+                        .LoadAction("Get")
+                        .UpdateAction("Put")
+                        .InsertAction("Post")
+                        .DeleteAction("Delete")
+                        .Key("Id")
+                        )
+                        )
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
