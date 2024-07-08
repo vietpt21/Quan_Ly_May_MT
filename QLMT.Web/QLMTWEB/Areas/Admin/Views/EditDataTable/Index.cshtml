@@ -1,343 +1,352 @@
-﻿
+﻿<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
-<div class="container fluid">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">Line</div>
-                <div class="card-body">
-
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.Line>()
-                        .ID("gridContainer")
-                        .ShowBorders(true)
-                        .Paging(p => p.PageSize(10))  // Kích thước trang mặc định là 10
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)  // Hiển thị bộ chọn kích thước trang
-                        .AllowedPageSizes(new[] { 5, 10, 20 })  // Các tùy chọn kích thước trang
-                        .ShowInfo(true)  // Hiển thị thông tin phân trang
-                        )
-                        .Editing(e => e
-                        .Mode(GridEditMode.Popup)  // Chế độ chỉnh sửa là Popup
-                        .AllowUpdating(true)  // Cho phép cập nhật
-                        .AllowAdding(true)  // Cho phép thêm
-                        .AllowDeleting(true)  // Cho phép xóa
-                        .Popup(p => p
-                        .Title("Line")
-                        .ShowTitle(true)
-                        .Width(700)
-                        .Height(525)
-                        )
-                        .Form(f => f.Items(items =>
-                        {
-                            items.AddGroup()
-                            .ColCount(2)
-                            .ColSpan(2)
-                            .Items(groupItems =>
-                            {
-                                groupItems.AddSimpleFor(m => m.LineName);
-                                groupItems.AddSimpleFor(m => m.Note)
-                            .ColSpan(2)
-                            .Editor(editor => editor.TextArea().Height(100));
-                            });
-                        }))
-                        )
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.LineName);
-                            columns.AddFor(m => m.Note)
-                            .Visible(false);
-                        })
-                        .DataSource(d => d.Mvc()
-                        .Controller("LineApi")
-                        .LoadAction("Get")
-                        .UpdateAction("Put")
-                        .InsertAction("Post")
-                        .DeleteAction("Delete")
-                        .Key("LineId")
-                        )
-                        )
+                <h4 class="card-title">Datatable Editable</h4>
+                <div class="d-flex justify-content-end mb-3">
+                    <button id="addLineBtn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="tblDataLine" class="table table-editable table-nowrap align-middle table-edits" ">
+                        <thead>
+                            <tr>
+                                <th >Line Id</th>
+                                <th >Line Name</th>
+                                <th>Note</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">Unit</div>
-                <div class="card-body">
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.Unit>()
-                        .ID("unitGridContainer")
-                        .ShowBorders(true)
-                        .Paging(p => p.PageSize(10))
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)
-                        .AllowedPageSizes(new[] { 5, 10, 20 })
-                        .ShowInfo(true)
-                        )
-                        .Editing(e => e.Mode(GridEditMode.Popup)
-                        .AllowUpdating(true)
-                        .AllowAdding(true)
-                        .AllowDeleting(true)
-                        .Popup(p => p
-                        .Title("Unit")
-                        .ShowTitle(true)
-                        .Width(700)
-                        .Height(525)
-                        )
-                        .Form(f => f.Items(items =>
-                        {
-                            items.AddGroup()
-                            .ColCount(2)
-                            .ColSpan(2)
-                            .Items(groupItems =>
-                            {
-                                groupItems.AddSimpleFor(m => m.UnitName);
-                                groupItems.AddSimpleFor(m => m.Note)
-                            .ColSpan(2)
-                            .Editor(editor => editor.TextArea().Height(100));
-                            });
-                            items.AddGroup()
-                            .ColCount(1)
-                            .ColSpan(1)
-                            .Items(groupItems =>
-                            {
-                                groupItems.AddSimpleFor(m => m.LineId);
-                            });
-                        }))
-                        )
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.UnitName);
-                            columns.AddFor(m => m.LineId).Caption("Name Line")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
-                            .DisplayExpr("LineName")
-                            .ValueExpr("LineId")
-                            );
-                            columns.AddFor(m => m.Note)
-                            .Visible(false);
-                        })
-                        .DataSource(d => d.Mvc()
-                        .Controller("UnitApi")
-                        .LoadAction("Get")
-                        .UpdateAction("Put")
-                        .InsertAction("Post")
-                        .DeleteAction("Delete")
-                        .Key("UnitId")
-                        )
-                        )
-                </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
+<!-- Modal for Adding a New Line -->
+
+
+<div class="modal fade" id="addLineModal" tabindex="-1" role="dialog" aria-labelledby="addLineModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addLineModalLabel">Add New Line</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addLineForm">
+                    <div class="form-group">
+                        <label for="lineName">Line Name</label>
+                        <input type="text" class="form-control" id="lineName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Note</label>
+                        <input type="text" class="form-control" id="note" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Line</button>
+                </form>
             </div>
         </div>
-
-    
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">Computer</div>
-                <div class="card-body">
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.Computer>()
-
-                        .ElementAttr(new { @class = "dx-card wide-card" })
-                        .DataSource(d => d.Mvc()
-                        .Controller("ComputerApi")
-                        .LoadAction("Get")
-                        .InsertAction("Post")
-                        .UpdateAction("Put")
-                        .DeleteAction("Delete")
-                        .Key("ComputerId")
-                        )
-                        .ShowBorders(false)
-                        .FilterRow(f => f.Visible(true))
-                        .FocusedRowEnabled(true)
-                        .FocusedRowIndex(0)
-                        .ColumnAutoWidth(true)
-                        .ColumnHidingEnabled(true)
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.ComputerName);
-                            columns.AddFor(m => m.Configuration);
-                            columns.AddFor(m => m.EntryDate);
-                            columns.AddFor(m => m.Status);
-
-                        })
-                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                        .Paging(p => p.PageSize(10))
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)
-                        .AllowedPageSizes(new[] { 5, 10, 20 })
-                        .ShowInfo(true)
-                        )
-                        )
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">Screen</div>
-                <div class="card-body">
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.Screen>()
-
-                        .ElementAttr(new { @class = "dx-card wide-card" })
-                        .DataSource(d => d.Mvc()
-                        .Controller("ScreenApi")
-                        .LoadAction("Get")
-                        .InsertAction("Post")
-                        .UpdateAction("Put")
-                        .DeleteAction("Delete")
-                        .Key("ScreenId")
-                        )
-                        .ShowBorders(false)
-                        .FilterRow(f => f.Visible(true))
-                        .FocusedRowEnabled(true)
-                        .FocusedRowIndex(0)
-                        .ColumnAutoWidth(true)
-                        .ColumnHidingEnabled(true)
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.ScreenName);
-                            columns.AddFor(m => m.EntryDate);
-                            columns.AddFor(m => m.Status);
-
-                        })
-                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                        .Paging(p => p.PageSize(10))
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)
-                        .AllowedPageSizes(new[] { 5, 10, 20 })
-                        .ShowInfo(true)
-                        )
-                        )
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">NetworkRange</div>
-                <div class="card-body">
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.NetworkRange>()
-
-                        .ElementAttr(new { @class = "dx-card wide-card" })
-                        .DataSource(d => d.Mvc()
-                        .Controller("NetworkRangeApi")
-                        .LoadAction("Get")
-                        .InsertAction("Post")
-                        .UpdateAction("Put")
-                        .DeleteAction("Delete")
-                        .Key("RangeId")
-                        )
-                        .ShowBorders(false)
-                        .FilterRow(f => f.Visible(true))
-                        .FocusedRowEnabled(true)
-                        .FocusedRowIndex(0)
-                        .ColumnAutoWidth(true)
-                        .ColumnHidingEnabled(true)
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.RangeName);
-                            columns.AddFor(m => m.IpAddress);
-                            columns.AddFor(m => m.Status);
-
-                        })
-                        .Editing(e => e.AllowAdding(true).AllowDeleting(true).AllowUpdating(true))
-                        .Paging(p => p.PageSize(10))
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)
-                        .AllowedPageSizes(new[] { 5, 10, 20 })
-                        .ShowInfo(true)
-                        )
-                        )
-
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center fs-1">Management</div>
-                <div class="card-body">
-                    @(Html.DevExtreme().DataGrid<QLMT.Models.Management>()
-                        .ID("ManagementGridContainer")
-                        .ShowBorders(true)
-                        .Paging(p => p.PageSize(10))
-                        .Pager(p => p
-                        .ShowPageSizeSelector(true)
-                        .AllowedPageSizes(new[] { 5, 10, 20 })
-                        .ShowInfo(true)
-                        )
-                        .Editing(e => e.Mode(GridEditMode.Popup)
-                        .AllowUpdating(true)
-                        .AllowAdding(true)
-                        .AllowDeleting(true)
-                        .Popup(p => p
-                        .Title("Unit")
-                        .ShowTitle(true)
-                        .Width(700)
-                        .Height(525)
-                        )
-                        .Form(f => f.Items(items =>
-                        {
-
-                            items.AddGroup()
-                            .ColCount(2)
-                            .ColSpan(2)
-                            .Items(groupItems =>
-                            {
-                                groupItems.AddSimpleFor(m => m.LineId);
-                                groupItems.AddSimpleFor(m => m.ComputerId);
-                                groupItems.AddSimpleFor(m => m.RangeId);
-                                groupItems.AddSimpleFor(m => m.ScreenId);
-                                groupItems.AddSimpleFor(m => m.UnitId);
-                            });
-
-                        }))
-                        )
-                        .Columns(columns =>
-                        {
-                            columns.AddFor(m => m.LineId).Caption("Name Line")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("LineApi").LoadAction("Get").Key("LineId"))
-                            .DisplayExpr("LineName")
-                            .ValueExpr("LineId")
-                            );
-                            columns.AddFor(m => m.UnitId).Caption("Name Unit")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("UnitApi").LoadAction("Get").Key("UnitId"))
-                            .DisplayExpr("UnitName")
-                            .ValueExpr("UnitId")
-                            );
-                            columns.AddFor(m => m.ComputerId).Caption("Name Computer")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("ComputerApi").LoadAction("Get").Key("ComputerId"))
-                            .DisplayExpr("ComputerName")
-                            .ValueExpr("ComputerId")
-                            );
-                            columns.AddFor(m => m.ScreenId).Caption("Name Screen")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("ScreenApi").LoadAction("Get").Key("ScreenId"))
-                            .DisplayExpr("ScreenName")
-                            .ValueExpr("ScreenId")
-                            );
-                            columns.AddFor(m => m.RangeId).Caption("IpAddress")
-                            .Lookup(lookup => lookup
-                            .DataSource(d => d.Mvc().Controller("NetworkRangeApi").LoadAction("Get").Key("RangeId"))
-                            .DisplayExpr("IpAddress")
-                            .ValueExpr("RangeId")
-                            );
-
-                        })
-                        .DataSource(d => d.Mvc()
-                        .Controller("ManagementApi")
-                        .LoadAction("Get")
-                        .UpdateAction("Put")
-                        .InsertAction("Post")
-                        .DeleteAction("Delete")
-                        .Key("Id")
-                        )
-                        )
-                </div>
-            </div>
-        </div>
-
-
     </div>
-
 </div>
+
+<script>
+    $(document).ready(function () {
+        var table; // Variable to store DataTable instance
+
+        // Initialize DataTable and load data via AJAX
+        $.ajax({
+            url: '/api/lineApi',
+            method: 'GET',
+            success: function (response) {
+                var data = response.data; // Data from response
+
+                // Generate HTML based on data
+                var html = '';
+                data.forEach(function (item) {
+                    html += '<tr data-id="' + item.LineId + '" style="cursor: pointer;">' +
+                        '<td data-field="LineId">' + item.LineId + '</td>' +
+                        '<td data-field="LineName">' + item.LineName + '</td>' +
+                        '<td data-field="Note">' + item.Note + '</td>' +
+                        '<td>' +
+                        '<a class="btn btn-outline-secondary btn-sm edit" title="Edit">' +
+                        '<i class="fas fa-pencil-alt" title="Edit"></i>' +
+                        '</a>' +
+                        '<a class="btn btn-outline-danger btn-sm delete" title="Delete">' +
+                        '<i class="fas fa-trash-alt" title="Delete"></i>' +
+                        '</a>' +
+                        '</td>' +
+                        '</tr>';
+                });
+
+                // Add HTML to the table body
+                $('#tblDataLine tbody').html(html);
+
+                // Initialize DataTables
+                table = $('#tblDataLine').DataTable({
+                    // DataTables configuration options
+                });
+
+                // Handle inline editing
+                $('#tblDataLine tbody').on('click', '.edit', function () {
+                    var $btn = $(this).find('i');
+                    var $row = $(this).closest('tr');
+                    var id = $row.data('id');
+
+                    if ($btn.hasClass('fa-pencil-alt')) {
+                        // Fetch data for the specific row
+                        $.ajax({
+                            url: '/api/lineApi/' + id,
+                            method: 'GET',
+                            success: function (response) {
+                                var item = response.data;
+
+                                // Populate the row with the fetched data and make it editable
+                                $row.find('td[data-field="LineName"]').text(item.LineName).attr('contenteditable', 'true');
+                                $row.find('td[data-field="Note"]').text(item.Note).attr('contenteditable', 'true');
+
+                                // Switch to save mode
+                                $btn.removeClass('fa-pencil-alt').addClass('fa-save').attr('title', 'Save');
+                                $row.find('td[contenteditable="true"]').addClass('editable');
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error fetching data:', error);
+                            }
+                        });
+                    } else {
+                        // Switch to edit mode and save data
+                        var updatedData = {
+                            LineId: id, // Add LineId to the data object
+                            LineName: $row.find('td[data-field="LineName"]').text(),
+                            Note: $row.find('td[data-field="Note"]').text()
+                        };
+
+                        console.log('Updating data for ID:', id, 'with data:', updatedData);
+
+                        $.ajax({
+                            url: '/api/lineApi/'+id , // Correct URL format
+                            method: 'PUT',
+                            contentType: 'application/json',
+                            data: JSON.stringify(updatedData),
+                            success: function (response) {
+                                console.log('Update successful:', response);
+                                // Optionally, update the row data with response data
+                                $btn.removeClass('fa-save').addClass('fa-pencil-alt').attr('title', 'Edit');
+                                $row.find('td[contenteditable="true"]').removeClass('editable').attr('contenteditable', 'false');
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error updating data:', error);
+                                // Handle error response
+                            }
+                        });
+                    }
+                });
+                // Handle deletion
+                $('#tblDataLine tbody').on('click', '.delete', function () {
+                    var $row = $(this).closest('tr');
+                    var id = $row.data('id');
+
+                    if (confirm('Are you sure you want to delete this item?')) {
+                        $.ajax({
+                            url: '/api/lineApi/' + id,
+                            method: 'DELETE',
+                            success: function (response) {
+                                console.log('Deletion successful');
+                                table.row($row).remove().draw();
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error deleting data:', error);
+                                // Handle error response
+                            }
+                        });
+                    }
+                });
+                 // Handle form submission for adding a new line
+            $('#addLineForm').on('submit', function (e) {
+                e.preventDefault();
+
+                var newLine = {
+                    LineName: $('#lineName').val(),
+                    Note: $('#note').val()
+                };
+
+                $.ajax({
+                    url: '/api/lineApi',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(newLine),
+                    success: function (response) {
+                        console.log('Creation successful');
+                        // Optionally, add the new row to the DataTable
+                        var item = response;
+                        var newRowHtml = '<tr data-id="' + item.LineId + '" style="cursor: pointer;">' +
+                            '<td data-field="LineId">' + item.LineId + '</td>' +
+                            '<td data-field="LineName">' + item.LineName + '</td>' +
+                            '<td data-field="Note">' + item.Note + '</td>' +
+                            '<td>' +
+                            '<a class="btn btn-outline-secondary btn-sm edit" title="Edit">' +
+                            '<i class="fas fa-pencil-alt" title="Edit"></i>' +
+                            '</a>' +
+                            '</td>' +
+                            '<td>' +
+                            '<a class="btn btn-outline-danger btn-sm delete" title="Delete">' +
+                            '<i class="fas fa-trash-alt" title="Delete"></i>' +
+                            '</a>' +
+                            '</td>' +
+                            '</tr>';
+                        table.row.add($(newRowHtml)).draw();
+
+                        $('#addLineModal').modal('hide');
+                        $('#addLineForm')[0].reset();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error creating data:', error);
+                        // Handle error response
+                    }
+                });
+            });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+        $('#addLineBtn').on('click', function () {
+        $('#addLineModal').modal('show');
+    });
+    });
+</script>
+
+<style>
+    .editable {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+    }
+</style>
+
+
+
+
+
+
+
+@* <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Datatable Editable</h4>
+
+                <div class="table-responsive">
+                    <table class="tblDataLine table table-editable table-nowrap align-middle table-edits  editable">
+                        <thead>
+                            <tr>
+                                <th>LineName</th>
+                                <th>Note</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row --> *@
+
+@* <script>
+    $(document).ready(function () {
+        var dataTableLine;
+
+        // Khởi tạo DataTable
+        dataTableLine = $('#tblDataLine').DataTable({
+            "ajax": {
+                "url": "/api/lineApi",
+                "method": "GET",
+                "dataSrc": "data"
+            },
+            "columns": [
+                { "data": "LineName", "className": "editable" },
+                { "data": "Note", "className": "editable" },
+                {
+                    "data": null,
+                    "className": "edit-column",
+                    "render": function (data, type, row) {
+                        return `<button type="button" class="btn btn-outline-secondary btn-sm edit" data-id="${row.LineId}">
+                                    <i class="fas fa-pencil-alt edit-icon"></i>
+                                </button>`;
+                    }
+                }
+            ]
+        });
+
+        // Bắt sự kiện click vào nút "Edit"
+        $('#tblDataLine').on('click', '.edit', function () {
+            var $cell = $(this).closest('td'); // Lấy ô chứa nút "Edit"
+            var $row = $cell.closest('tr'); // Lấy dòng chứa ô đó
+            var rowData = dataTableLine.row($row).data(); // Lấy dữ liệu của dòng đó
+
+            // Bật chế độ chỉnh sửa trên ô LineName và Note
+            $row.find('.editable').each(function () {
+                var html = $(this).html();
+                $(this).html(`<input class="form-control" value="${html}">`);
+            });
+
+            // Thay đổi giao diện nút "Edit" sang nút "Save"
+            $(this).html('<i class="fas fa-save edit-icon"></i>');
+            $(this).removeClass('btn-outline-secondary').addClass('btn-outline-success');
+            $(this).removeClass('edit').addClass('save');
+
+            // Vô hiệu hóa các nút "Edit" khác
+            $('.edit').attr('disabled', true);
+        });
+
+        // Bắt sự kiện click vào nút "Save"
+        $('#tblDataLine').on('click', '.save', function () {
+            var $row = $(this).closest('tr'); // Lấy dòng chứa nút "Save"
+            var rowData = dataTableLine.row($row).data(); // Lấy dữ liệu của dòng đó
+
+            // Lấy dữ liệu mới từ các input
+            var updatedLineName = $row.find('.editable:eq(0) input').val();
+            var updatedNote = $row.find('.editable:eq(1) input').val();
+
+            // Gọi API để cập nhật dữ liệu
+            $.ajax({
+                url: `/api/lineApi`, // Điều chỉnh url phù hợp với API của bạn để cập nhật dữ liệu
+                method: 'PUT',
+                data: {
+                    LineName: updatedLineName,
+                    Note: updatedNote
+                },
+                success: function (response) {
+                    // Cập nhật lại dữ liệu trong DataTable
+                    dataTableLine.row($row).data(response.data).draw();
+                },
+                error: function (err) {
+                    console.error('Error updating data:', err);
+                    // Xử lý lỗi nếu cần thiết
+                }
+            });
+
+            // Thay đổi giao diện nút "Save" về lại nút "Edit"
+            $(this).html('<i class="fas fa-pencil-alt edit-icon"></i>');
+            $(this).removeClass('btn-outline-success').addClass('btn-outline-secondary');
+            $(this).removeClass('save').addClass('edit');
+
+            // Bật lại các nút "Edit" khác
+            $('.edit').attr('disabled', false);
+        });
+
+        // Bắt sự kiện khi click ra ngoài ô chỉnh sửa để lưu thay đổi
+        $('#tblDataLine').on('blur', '.editable input', function () {
+            $(this).closest('.save').click(); // Gọi sự kiện click vào nút "Save"
+        });
+    });
+
+</script> *@

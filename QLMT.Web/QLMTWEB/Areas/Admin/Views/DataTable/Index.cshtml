@@ -1,108 +1,187 @@
-﻿<body data-topbar="dark">
+﻿
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-    <!-- Begin page -->
-    <div id="layout-wrapper">
+                <h4 class="card-title">List Line</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
 
-        <div class="main-content">
+                <table id="datatable" class="tblDataLine table  table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name Line</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
 
-            <div class="page-content">
-                <div class="container">
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                            <h2 class=" text-center mt-3">List Line</h2>
-                                <table id="tblDataLine" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>NameLine</th>
-                                            <th>Note</th>
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Unit Name</th>
+                            <th>Line Name</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
 
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                            </div>
-                            <div class="col-sm-12">
-                            <h2 class=" text-center mt-3">List Unit</h2>
-                                <table id="tblDataUnit" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Name Unit</th>
-                                            <th>Name Line</th>
-                                            <th>Note</th>
-
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                            </div>
-                            <div class="col-sm-12">
-                                <h2 class=" text-center mt-3">List Computer</h2>
-                                <table id="tblDataComputer" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Name Computer</th>                           
-                                            <th>Entry Date</th>
-                                            <th>Configuration</th>
-                                            <th>Status</th>
-                                       
-
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                                </div>
-                            <div class="col-sm-12">
-                                <h2 class=" text-center mt-3">List Screen</h2>
-                                <table id="tblDataScreen" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                        <th>Name Computer</th>
-                                            <th>Entry Date</th>
-                                            <th>Status</th>
-
-
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                            </div>
-                            <div class="col-sm-12">
-                                <h2 class=" text-center mt-3">List Network Ranges</h2>
-                                <table id="tblDataNetwork" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Name Range</th>
-                                            <th>IpAddress</th>
-                                            <th>Status</th>
-
-
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                            </div>
-                            <div class="col-sm-12">
-                                <h2 class=" text-center mt-3">Managemnet</h2>
-                            <table id="tblDataManagement" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Name Unit</th>
-                                            <th>Nmae Line</th>
-                                            <th>Name Computer</th>
-                                            <th>Name Range</th>
-                                            <th>IpAdress </th>
-                                            <th>Name Screen</th>
-
-
-                                        </tr>
-                                    </thead>
-                                </table> <!-- end row -->
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
- </body>
+    </div> <!-- end col -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">List Unit</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call               
+
+                <table id="datatable" class="tblDataUnit table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Unit Name</th>
+                            <th>Line Name</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
+
+
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">List Computer</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
+                <table id="datatable" class="tblDataComputer table table-bordered " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name Computer</th>
+                            <th>Entry Date</th>
+                            <th>Configuration</th>
+                            <th>Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">List Screen</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
+                <table id="datatable" class="tblDataScreen table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name Screen</th>
+                            <th>Entry Date</th>
+                            <th>Status</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">List Network Ranges</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
+                <table id="datatable" class="tblDataNetwork  table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name Range</th>
+                            <th>IpAddress</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+    $1$<div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Managemnet</h4>
+                <p class="card-title-desc">
+                    DataTables has most features enabled by
+                    default, so all you need to do to use it with your own tables is to call
+                    the construction function: <code>$().DataTable();</code>.
+                </p>
+                <table id="datatable" class="tblDataManagement  table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Name Unit</th>
+                            <th>Nmae Line</th>
+                            <th>Name Computer</th>
+                            <th>Name Range</th>
+                            <th>IpAdress </th>
+                            <th>Name Screen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->#1#
+    
+    
+    
+</div> <!-- end row -->
+
+
+
+
+
+
+
 <script>
     var dataTableLine;
     var dataTableUnit;
@@ -111,7 +190,7 @@
     var dataTableNetwork;
     var dataTableManagement;
     var lineData = [];
-    
+
 
     // Hàm loadDataTable được gọi khi tài liệu sẵn sàng
     $(document).ready(function () {
@@ -127,11 +206,11 @@
                 lineData = data.data;
                 // Sau khi lấy xong dữ liệu line, tiếp tục lấy dữ liệu unit
                 loadUnitDataTable();
-               
+
             }
         });
 
-        dataTableLine = $('#tblDataLine').DataTable({
+        dataTableLine = $('.tblDataLine').DataTable({
             "ajax": {
                 "url": "/api/lineApi",
                 "dataSrc": "data"
@@ -141,7 +220,7 @@
                 { "data": "Note" },
             ]
         });
-        dataTableComputer = $('#tblDataComputer').DataTable({
+        dataTableComputer = $('.tblDataComputer').DataTable({
             "ajax": {
                 "url": "/api/computerApi",
                 "dataSrc": "data"
@@ -151,10 +230,10 @@
                 { "data": "EntryDate" },
                 { "data": "Configuration" },
                 { "data": "Status" },
-             
+
             ]
         });
-        dataTableScreen = $('#tblDataScreen').DataTable({
+        dataTableScreen = $('.tblDataScreen').DataTable({
             "ajax": {
                 "url": "/api/ScreenApi",
                 "dataSrc": "data"
@@ -165,7 +244,7 @@
                 { "data": "Status" },
             ]
         });
-        dataTableNetwork = $('#tblDataNetwork').DataTable({
+        dataTableNetwork = $('.tblDataNetwork').DataTable({
             "ajax": {
                 "url": "/api/networkrangeApi",
                 "dataSrc": "data"
@@ -176,13 +255,13 @@
                 { "data": "Status" },
             ]
         });
-        dataTableManagement = $('#tblDataManagement').DataTable({
+        dataTableManagement = $('.tblDataManagement').DataTable({
             "ajax": {
                 "url": "/api/ManagementApi",
                 "dataSrc": "data"
             },
             "columns": [
-               
+
                 { "data": "UnitName" },
                 { "data": "LineName" },
                 { "data": "ComputerName" },
@@ -191,7 +270,7 @@
                 { "data": "ScreenName" },
             ]
         });
-       
+
 
     }
     function loadUnitDataTable() {
@@ -215,17 +294,17 @@
                 });
 
                 // Khởi tạo DataTable với dữ liệu đã được kết hợp
-                dataTableUnit = $('#tblDataUnit').DataTable({
+                dataTableUnit = $('.tblDataUnit').DataTable({
                     data: combinedData,
                     columns: [
                         { "data": "UnitName" },
                         { "data": "LineName" },
                         { "data": "Note" },
-                       
+
                     ]
                 });
             }
         });
     }
-  
+
 </script>

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLMTWEB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ee0db746ef65d337bf2f5a2d2a0b4a1fbfe2b23")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c32166b8b241f7c4b3e57d8d62455bbc4ca38510")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLMTWEB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLMTWEB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

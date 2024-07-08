@@ -1,8 +1,8 @@
-@using QlLMT.Untility
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 
-<html>
 <head>
+
     <meta charset="utf-8" />
     <title>Dashboard | Upcube - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,7 @@
 
     <!-- DataTables -->
     <link href="~/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/libs/datatables.net-autoFill-bs4/css/autoFill.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/assets/libs/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Responsive datatable examples -->
     <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
@@ -32,18 +31,22 @@
     <link href="~/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
     <link href="~/assets/libs/datatables.net-select-bs4/css//select.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-   
-    <!-- check-->
+    <!-- Responsive datatable examples -->
+    <link href="~/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="~/css/vendor.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/Site.css" />
-    <script src="~/js/vendor.js" asp-append-version="true"></script>
+    <!-- Bootstrap Css -->
+    <link href="~/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
 
-
 <body data-topbar="dark">
 
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Begin page -->
     <div id="layout-wrapper">
 
 
@@ -90,125 +93,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-megamenu">
                             <div class="row">
-                                <div class="col-sm-8">
-
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <h5 class="font-size-14">UI Components</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Lightbox</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Range Slider</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Sweet Alert</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Rating</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Forms</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Tables</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Charts</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <h5 class="font-size-14">Applications</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Ecommerce</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Calendar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Email</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Projects</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Tasks</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Contacts</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-md-4">
-                                            <h5 class="font-size-14">Extra Pages</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Light Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Compact Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Horizontal layout</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Maintenance</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Coming Soon</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Timeline</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">FAQs</a>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <h5 class="font-size-14">UI Components</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Lightbox</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Range Slider</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Sweet Alert</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Rating</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Forms</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Tables</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Charts</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="col-sm-5">
-                                            <div>
-                                                <img src="~/assets/images/megamenu-img.png" alt="megamenu-img" class="img-fluid mx-auto d-block">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                             
                             </div>
 
                         </div>
@@ -463,45 +348,24 @@
                 <div id="sidebar-menu">
                     <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
-
-                        <li class="menu-title">Pages</li>
+                        <li class="menu-title">Menu</li>
 
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="ri-account-circle-line"></i>
-                                <span>Authentication</span>
+                            <a href="index.html" class="waves-effect">
+                                <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end">3</span>
+                                <span>Dashboard</span>
                             </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="Identity/Account/Login">Login</a></li>
-                                <li><a href="Identity/Account/Register">Register</a></li>
-                                <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                                <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="calendar.html" class=" waves-effect">
+                                <i class="ri-calendar-2-line"></i>
+                                <span>Calendar</span>
+                            </a>
                         </li>
 
                        
 
-                        <li class="menu-title">Components</li>
-
-                     
-                      
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="ri-table-2"></i>
-                                <span>Tables</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="tables-basic.html">Basic Tables</a></li>
-                              @* @if (User.IsInRole(SD.Role_Admin))
-						        { *@
-                                <li><a asp-area="Admin" asp-controller="Datatable" asp-action="index">Data Tables</a></li>
-                                <li><a href="tables-responsive.html">Responsive Table</a></li>
-                                <li><a asp-area="Admin" asp-controller="EditDataTable" asp-action="index">Editable Table</a></li>
-                             @*    } *@
-                            </ul>
-                        </li>
-
-                       
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -513,44 +377,66 @@
         <!-- ============================================================== -->
         <div class="main-content">
 
-            <div class="page-content">
-                <div class="container-fluid">
-                     <main role="main" >
-                        @RenderBody()
-                    </main>
-                </div> 
-            </div>
-
-            </div>
-            <!-- End Page-content -->
-
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script> � Upcube.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </footer>
+            <main role="main" >
+                @RenderBody()
+            </main>
 
         </div>
-
         <!-- end main content-->
 
-       
-
     </div>
-
-
     <!-- END layout-wrapper -->
+    <!-- Right Sidebar -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Settings</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                    <i class="mdi mdi-close noti-icon"></i>
+                </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0" />
+            <h6 class="text-center mb-0">Choose Layouts</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="~/assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="layout-1">
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="~/assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="layout-2">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch" data-bsStyle="~/assets/css/bootstrap-dark.min.css" data-appStyle="~/assets/css/app-dark.min.css">
+                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="~/assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="layout-3">
+                </div>
+                <div class="form-check form-switch mb-5">
+                    <input class="form-check-input theme-choice" type="checkbox" id="rtl-mode-switch" data-appStyle="~/assets/css/app-rtl.min.css">
+                    <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                </div>
+
+
+            </div>
+
+        </div> <!-- end slimscroll-menu-->
+    </div>
+    <!-- /Right-bar -->
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
     <!-- JAVASCRIPT -->
     <script src="~/assets/libs/jquery/jquery.min.js"></script>
     <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -570,6 +456,18 @@
     <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 
+    <!-- Responsive examples -->
+    <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <script src="~/assets/js/pages/dashboard.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+   
+    <!-- Required datatable js -->
+    <script src="~/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <!-- Buttons examples -->
 
     <script src="~/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -584,20 +482,15 @@
     <script src="~/assets/libs/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
     <script src="~/assets/libs/datatables.net-select/js/dataTables.select.min.js"></script>
 
-
     <!-- Responsive examples -->
     <script src="~/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="~/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <script src="~/assets/js/pages/dashboard.init.js"></script>
 
-    <!-- Table Editable plugin -->
-    <script src="~/assets/libs/table-edits/build/table-edits.min.js"></script>
-    <script src="~/assets/js/pages/table-editable.init.js"></script>
+    <!-- Datatable init js -->
+    <script src="~/assets/js/pages/datatables.init.js"></script>
+
     <script src="~/assets/js/app.js"></script>
 
-  
-    <!-- App js -->
-    <script src="~/assets/js/app.js"></script>
 </body>
 
 </html>
